@@ -37,7 +37,6 @@ export default function LoginPage() {
             }else if(currentmail[0] !== "w" || "a" || "c"){
 		        setError("Error Occured, Please contact system administrator")
 	        }
-            // console.log(user);
         } catch (error) {
             if (error.code === 'auth/invalid-email') {
                 console.log(error.code);
@@ -82,7 +81,7 @@ export default function LoginPage() {
                         onChange={handleChange}
                     />
                 </div>
-                <button type="button" className="btn-form" onClick={handleSubmit}> Login</button>
+                <button data-testid="btn-login" type="button" className="btn-form" onClick={handleSubmit} > Login</button>
                 <div className='title-h1'>{error && <p>{error}</p>}</div>
             </form>
 
