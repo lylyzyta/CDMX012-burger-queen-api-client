@@ -1,15 +1,19 @@
-import { useAuth } from "../../context/AutProvider";
 import "./Waiter.css";
 import LogoImage from '../../img/Logo_Image.png';
+//import { getdata } from '../../data';
+// import { useState, useEffect } from "react";
+import { logout } from "../../lib/firebaseAuth";
+import { auth } from "../../lib/firebaseConfig";
+import { useNavigate } from "react-router-dom";
 
 
 export default function WaiterPage() {
-  const { logout } = useAuth();
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleClick = async () => {
-    await logout();
+    await logout(auth);
+    navigate('/');
   };
 
   return (
