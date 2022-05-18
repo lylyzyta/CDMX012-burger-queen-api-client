@@ -44,7 +44,16 @@ export default function WaiterPage() {
 
 
     return (
-        <><h1>{products[0]}</h1>
+        <><h1>Waiter</h1>
+        <div>
+            {products.map(each=>{
+console.log(each);
+<p>{each.item}</p>
+<img src="each.img" alt=""/>
+
+            })
+        }
+        </div>
 
 
 
