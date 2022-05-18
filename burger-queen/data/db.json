@@ -1,14 +1,68 @@
 {
   "products": [
-        { "id": 1, "item": "Beef", "price": 110, "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png", "dateEntry": "05/16/2022"  },
-        { "id": 2, "item": "Beef Jumbo", "price": 130, "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png", "dateEntry": "05/16/2022"  },
-        { "id": 3, "item": "Cheese Jumbo", "price": 150, "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png", "dateEntry": "05/16/2022"  },
-        { "id": 4, "item": "Chicken Jumbo", "price": 150, "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png", "dateEntry": "05/16/2022"  },
-        { "id": 5, "item": "Jumbo Jumbo", "price": 200, "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png", "dateEntry": "05/16/2022" },
-        { "id": 6, "item": "Original", "price": 120, "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png", "dateEntry": "05/16/2022"  },
-        { "id": 7, "item": "Original Black", "price": 130, "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png", "dateEntry": "05/16/2022"  },
-        { "id": 8, "item": "Original Cheese", "price": 135, "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png", "dateEntry": "05/16/2022" },
-        { "id": 9, "item": "Spicy", "price": 130, "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png", "dateEntry": "05/16/2022"  }
+    {
+      "id": 1,
+      "item": "Beef",
+      "price": 110,
+      "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png",
+      "dateEntry": "05/16/2022"
+    },
+    {
+      "id": 2,
+      "item": "Beef Jumbo",
+      "price": 130,
+      "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png",
+      "dateEntry": "05/16/2022"
+    },
+    {
+      "id": 3,
+      "item": "Cheese Jumbo",
+      "price": 150,
+      "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png",
+      "dateEntry": "05/16/2022"
+    },
+    {
+      "id": 4,
+      "item": "Chicken Jumbo",
+      "price": 150,
+      "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png",
+      "dateEntry": "05/16/2022"
+    },
+    {
+      "id": 5,
+      "item": "Jumbo Jumbo",
+      "price": 200,
+      "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png",
+      "dateEntry": "05/16/2022"
+    },
+    {
+      "id": 6,
+      "item": "Original",
+      "price": 120,
+      "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png",
+      "dateEntry": "05/16/2022"
+    },
+    {
+      "id": 7,
+      "item": "Original Black",
+      "price": 130,
+      "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png",
+      "dateEntry": "05/16/2022"
+    },
+    {
+      "id": 8,
+      "item": "Original Cheese",
+      "price": 135,
+      "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png",
+      "dateEntry": "05/16/2022"
+    },
+    {
+      "id": 9,
+      "item": "Spicy",
+      "price": 130,
+      "img": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies-500x375.png",
+      "dateEntry": "05/16/2022"
+    }
   ],
   "user": [
     {
