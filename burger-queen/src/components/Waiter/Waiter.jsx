@@ -1,7 +1,6 @@
 import "./Waiter.css";
 import LogoImage from '../../img/Logo_Image.png';
-//import { getdata } from '../../data';
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { logout } from "../../lib/firebaseAuth";
 import { auth } from "../../lib/firebaseConfig";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +14,18 @@ export default function WaiterPage() {
     await logout(auth);
     navigate('/');
   };
+
+  const [products, setProducts] = useState([]);
+  // const arrayProd = []
+  
+  
+  useEffect(() => {
+       fetch("http://localhost:3004/products")
+        .then(res => res.json())
+        .then((data) => setProducts(data));
+
+    }, []);
+
 
   return (
     <div className="container-waiter">
@@ -38,9 +49,18 @@ export default function WaiterPage() {
             {" "}
             Bebidas
           </button>
+
         </div>
         <div className="container-menu">
-      
+        {products.map((product) => (
+        // console.log(product);
+        <>
+ 
+            <section className="container-burger">
+              <img className='burger-img' src={product.img} alt='logo-icon' />
+              <p className= 'burger-description'>{product.item} <br/> $ {product.price}</p>
+            </section></>
+            ))}
         </div>
       </section>
       <section className="container-order">
@@ -56,6 +76,9 @@ export default function WaiterPage() {
           <h3>Orden</h3>
           <h3>Total</h3>
         </div>
+      </section>
+      <section>
+
       </section>
     </div>
   );
