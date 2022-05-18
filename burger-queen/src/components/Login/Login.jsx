@@ -35,7 +35,7 @@ export default function LoginPage() {
             }else if(currentmail.includes('cook')){
                 navigate('/Kitchen');
             }else if(currentmail[0] !== "w" || "a" || "c"){
-                setError("Error Occured, Please contact system administrator")
+                setError("Error, Please contact the administrator")
             }
         } catch (error) {
             if (error.code === 'auth/invalid-email') {
