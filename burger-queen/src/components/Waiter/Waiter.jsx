@@ -1,18 +1,56 @@
 import { useAuth } from '../../context/AutProvider';
 
-export default  function WaiterPage () {
+import { useState, useEffect } from 'react';
+
+
+
+export default function WaiterPage() {
+
+   
+        const [products, setProducts] = useState([]);
+        useEffect(() => {
+
+            const data = fetch("http://localhost:3004/products").then(res => res.json()).then(result => {
+                let arrayProd = []
+                const other = result.map((typeOfPlate) => {                
+                    
+
+                    arrayProd.push(typeOfPlate);
+
+
+
+                });
+
+                setProducts(arrayProd)
+
+            });
+
+
+        }, [])
+      console.log(products);
+
+      
+        
+    
+
 
     const { logout } = useAuth();
-
-    // const navigate = useNavigate();
-
     const handleClick = async () => {
         await logout();
     }
 
-    return(
-        <><h1>Waiter</h1>
-        <button typeof='submit' onClick={handleClick}> Cerrar Sesión</button>
+
+
+
+
+    return (
+        <><h1>{products[0]}</h1>
+
+
+
+
+
+            <button typeof='submit' onClick={handleClick}> Cerrar Sesión</button>
         </>
     )
 }
