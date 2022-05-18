@@ -1,24 +1,25 @@
-import React, { BrowserRouter, Route, Routes } from 'react-router-dom';
-import LoginPage from './components/Login/Login';
-import WaiterPage from './components/Waiter/Waiter';
-import AdminPage from './components/Admin/Admin';
-import KitchenPage from  './components/Kitchen/Kitchen'
+import { useState } from 'react';
 import './App.css';
-import { AuthProvider } from './context/AutProvider';
-import { ProtectedRoute } from './components/ProtectedRouter/ProtectedRouter';
+import Paths from './components/Paths';
+import {
+  BrowserRouter,
+} from "react-router-dom";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 function App() {
+  const [isAutenticate, setAutenticate]=useState(null)
+  const auth = getAuth();
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      setAutenticate(user)
+    } else {
+      setAutenticate(null)
+    }
+  });
   return (
-      <BrowserRouter>
-        <AuthProvider>
-          <Routes>
-            <Route path="/" element={<LoginPage />} />
-            <Route path="/Waiter" element={(<ProtectedRoute><WaiterPage /></ProtectedRoute>)} />
-            <Route path="/Admin" element={(<ProtectedRoute><AdminPage /></ProtectedRoute>)} />
-            <Route path="/Kitchen" element={(<ProtectedRoute><KitchenPage /></ProtectedRoute>)} />
-          </Routes>
-        </AuthProvider>
-      </BrowserRouter>
+    <div>
+      <BrowserRouter><Paths isAutenticate={isAutenticate} /></BrowserRouter>
+    </div>
   );
 }
 

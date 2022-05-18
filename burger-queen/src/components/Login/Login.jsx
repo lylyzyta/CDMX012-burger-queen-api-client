@@ -1,9 +1,10 @@
 import { useNavigate } from 'react-router-dom';
-import LogoImage from '../../img/Logo_Image.gif';
+import "./Login.css";
+import LogoImage from '../../img/Logo_Image.png';
 import emailIcon from '../../img/emailIcon.svg';
 import passwordIcon from '../../img/passwordIcon.svg';
 import { useState } from 'react';
-import { useAuth } from '../../context/AutProvider';
+import { login } from '../../lib/firebaseAuth';
 
 export default function LoginPage() {
 
@@ -14,7 +15,6 @@ export default function LoginPage() {
 
     const [error, setError] = useState();
 
-    const { login } = useAuth();
 
     const navigate = useNavigate();
 
@@ -35,8 +35,8 @@ export default function LoginPage() {
             }else if(currentmail.includes('cook')){
                 navigate('/Kitchen');
             }else if(currentmail[0] !== "w" || "a" || "c"){
-		        setError("Error Occured, Please contact system administrator")
-	        }
+                setError("Error Occured, Please contact system administrator")
+            }
         } catch (error) {
             if (error.code === 'auth/invalid-email') {
                 console.log(error.code);
@@ -56,8 +56,9 @@ export default function LoginPage() {
 
     return (
         <div className="container-login">
-            <form className="register-container" onSubmit={handleSubmit} >
-                <img className='logo-icon' src={LogoImage} alt='logo-icon' />
+
+            <form className="register-container" >
+            <img className='logo-icon' src={LogoImage} alt='logo-icon' />
                 <h1 className='title-h1'> Welcome!</h1>
                 <h3 className='title-h3'>Login to your account</h3>
                 <div className="box-form">
@@ -82,9 +83,8 @@ export default function LoginPage() {
                     />
                 </div>
                 <button type="button" className="btn-form" onClick={handleSubmit}> Login</button>
-                <div className='title-h1'>{error && <p>{error}</p>}</div>
+                <div className='title-error'>{error && <p>{error}</p>}</div>
             </form>
-
         </div>
     )
 }
