@@ -315,22 +315,114 @@
       "roles": "Kitchen"
     }
   ],
-  "orders": {
-    "id": 1,
-    "userId": "",
-    "client": "",
-    "products": [
-      {
-        "number": 0,
-        "product": ""
-      }
-    ],
-    "status": [
-      "pending",
-      "canceled",
-      "delivered"
-    ],
-    "dateEntry": "",
-    "dateProcessed": ""
-  }
+  "orders": [
+    {
+      "id": 1,
+      "userId": "3",
+      "client": "Table 5",
+      "status": "pending",
+      "dateEntry": "23/05/2023",
+      "dateProcessed": "23/05/2023",
+      "products": [
+        {
+          "quantity": "1",
+          "product": "hamburgers"
+        },
+        {
+          "quantity": "1",
+          "product": "hamburgers"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "userId": "3",
+      "client": "Table 5",
+      "status": "pending",
+      "dateEntry": "23/05/2023",
+      "dateProcessed": "23/05/2023",
+      "products": [
+        {
+          "quantity": "1",
+          "product": "hamburgers"
+        },
+        {
+          "quantity": "1",
+          "product": "hamburgers"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "userId": "3",
+      "client": "Table 5",
+      "status": "pending",
+      "dateEntry": "23/05/2023",
+      "dateProcessed": "23/05/2023",
+      "products": [
+        {
+          "quantity": "1",
+          "product": "hamburgers"
+        },
+        {
+          "quantity": "1",
+          "product": "hamburgers"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "userId": "3",
+      "client": "Table 5",
+      "status": "pending",
+      "dateEntry": "23/05/2023",
+      "dateProcessed": "23/05/2023",
+      "products": [
+        {
+          "quantity": "1",
+          "product": "hamburgers"
+        },
+        {
+          "quantity": "1",
+          "product": "hamburgers"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "userId": "3",
+      "client": "Table 5",
+      "status": "pending",
+      "dateEntry": "23/05/2023",
+      "dateProcessed": "23/05/2023",
+      "products": [
+        {
+          "quantity": "1",
+          "product": "hamburgers"
+        },
+        {
+          "quantity": "1",
+          "product": "hamburgers"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "userId": "3",
+      "client": "Table 5",
+      "status": "pending",
+      "dateEntry": "23/05/2023",
+      "dateProcessed": "23/05/2023",
+      "products": [
+        {
+          "quantity": "1",
+          "product": "hamburgers"
+        },
+        {
+          "quantity": "1",
+          "product": "hamburgers"
+        }
+      ]
+    }
+  ]
 }

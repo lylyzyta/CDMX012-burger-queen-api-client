@@ -6,7 +6,8 @@ import { logout } from "../../lib/firebaseAuth";
 import { auth } from "../../lib/firebaseConfig";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Menu from "../../Menu";
+import Menu from "../../helpers/Menu";
+import CrudApi from "../Waiter/ListStatus/CrudApi";
 
 
 
@@ -23,12 +24,12 @@ export default function WaiterPage() {
  
   return (
     <div className="container-waiter">
-      <nav className="container-head">
+      {/* <nav className="container-head">
         <img className="logo-icon-waiter-out" src={LogoLogout} alt="logo-icon"  onClick={handleClick}/>
       
         <img className="logo-icon-waiter" src={LogoImage} alt="logo-icon" />
-      </nav>
-      <section className="container-products">
+      </nav> */}
+      <section className="container-take-orders">
         <div className="option-menu">
           <button className="btn-menu" value="breakfast" onClick={(e) => setFilterMenu(e.target.value)}>
           {" "}
@@ -47,26 +48,20 @@ export default function WaiterPage() {
             Beverage
           </button>
         </div>
+        
+        <section className="container-products">
         <div className="container-menu1" >
       <Menu option={filterMenu}/>
-
         </div>
-      </section>
-      <section className="container-order">
-        <div className="container-status-order">
-          <h3>Status Ordenes</h3>
-          <h3>Orden 1</h3>
-          <h3>Orden 2</h3>
-        </div>
+        </section>
+        
        
-           <button type="button" className="btn-new-order" value="beverage" >
-            {" "}
-           New Order
-          </button>
-     
-          <div className="container-new-order">
+        </section>
+      <section className="container-order">
+        
+      <CrudApi />
+       
 
-          </div>
       
       </section>
       <section></section>
