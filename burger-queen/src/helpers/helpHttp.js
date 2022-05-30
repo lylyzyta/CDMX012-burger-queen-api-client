@@ -20,7 +20,7 @@ export const helpHttp = () => {
         options.body = JSON.stringify(options.body) || false;
         if (!options.body) delete options.body;
 
-        console.log(options);
+        
         // Create the time to recive to a server answer to ejecute a fetch
         setTimeout(() => controller.abort(), 3000);
 

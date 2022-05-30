@@ -21,24 +21,45 @@
 }
 
 .offset {
-   width: 1.5em;
+   width: 3em;
+   height: 1.5em;
+   
   }
 .row {
     display: grid;
     color: white;
-    grid-template-columns:15% 40% 30% 15% ;
+    grid-template-columns:8% 9% 8% 30% 15% 15% 15% ;
+    
     width: 100%;
     height: 100%;
 }
-p{
-    color: white;
+.plusItems{
+    color:white;
     font-size: 1.5em;
 }
 .deleteButton {
     margin-top:5px;
     cursor: pointer; 
+    color: white;
 
 }
 .qty {
-    font-size: 1em;
+    font-size: 1.5em;
+    color: white;
+    margin-top:5px;
+    cursor: pointer; 
+}
+.sumbutton{
+    width: .5em;
+    font-size: 2em;
+    font-style: bold ;
+    align-items: center;
+    color:black;
+    
+}
+
+.container-new-order{
+    display: flex;
+    flex-direction: row;
+    overflow-y: scroll;
 }

@@ -31,8 +31,8 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
-       products: [
-        { [e.target.name] : e.target.value}
+      products: [
+        { [e.target.name]: e.target.value }
       ]
     });
     console.log(form)
@@ -99,9 +99,10 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           onChange={handleChange}
           value={form.dateProcessed}
         />
-        {form.products && form.products.map((product)=>
+        {form.products && form.products.map((product) =>
           <>
             <input
+              key={product.item}
               type="text"
               name={product['quantity']}
               placeholder="Quantity"
