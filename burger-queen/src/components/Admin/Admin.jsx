@@ -1,10 +1,12 @@
 import "./Admin.css";
 import { logout } from "../../lib/firebaseAuth";
+import LogoImage from "../../img/Logo_Image.png"
 import { auth } from "../../lib/firebaseConfig";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import Read from "./Crud/Read";
 
 export default  function AdminPage () {
-
     const navigate = useNavigate();
 
     const handleClick = async () => {
@@ -12,19 +14,41 @@ export default  function AdminPage () {
         navigate('/');
     };
 
+    const [filterPanel, setFilterPanel] = useState();
+
     return(
         <div className="container-admin">
-        <h3 className="container-head-h3" onClick={handleClick} >
-          Salir
-        </h3>
-            <section className="container-options-cook">
-            <h3>Listado de meseros</h3>
-            <h3>Agregar mesero</h3>
-            <h3>Menú</h3>
-            <h3>Modificar menú</h3>
-
-            </section>
+        
+            <section className="container-option-control-panel">
+              
+        <img className="logo-icon-admin" src={LogoImage} alt="logo-icon" />
+        
+            <button className="btn-option-panel" value="user" onClick={(e) => setFilterPanel(e.target.value)}>
+          {" "}
+         Users        
+          </button>
+          <button type="button" className="btn-option-panel" value="products" onClick={(e) => setFilterPanel(e.target.value)}>
+            {" "}
+           Products
+          </button>
+          <button type="button" className="btn-option-panel" value="waiter" onClick={(e) => setFilterPanel(e.target.value)}>
+            {" "}
+           Waiter status
+          </button>
+          <button type="button" className="btn-option-panel" value="kitchen" onClick={(e) => setFilterPanel(e.target.value)}>
+            {" "}
+           Kitchen status
+          </button>
                 
+            </section>
+
+            <section className="container-show-control-panel">
+            
+          
+            <Read option={filterPanel} />
+         
+            </section>
+            
         </div>
     )
 }
