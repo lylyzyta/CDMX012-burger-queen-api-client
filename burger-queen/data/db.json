@@ -369,60 +369,6 @@
           "product": "hamburgers"
         }
       ]
-    },
-    {
-      "id": 3,
-      "userId": "3",
-      "client": "Table 5",
-      "status": "pending",
-      "dateEntry": "23/05/2023",
-      "dateProcessed": "23/05/2023",
-      "products": [
-        {
-          "quantity": "1",
-          "product": "hamburgers"
-        },
-        {
-          "quantity": "1",
-          "product": "hamburgers"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "userId": "3",
-      "client": "Table 5",
-      "status": "pending",
-      "dateEntry": "23/05/2023",
-      "dateProcessed": "23/05/2023",
-      "products": [
-        {
-          "quantity": "1",
-          "product": "hamburgers"
-        },
-        {
-          "quantity": "1",
-          "product": "hamburgers"
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "userId": "3",
-      "client": "Table 5",
-      "status": "pending",
-      "dateEntry": "23/05/2023",
-      "dateProcessed": "23/05/2023",
-      "products": [
-        {
-          "quantity": "1",
-          "product": "hamburgers"
-        },
-        {
-          "quantity": "1",
-          "product": "hamburgers"
-        }
-      ]
     }
   ]
 }

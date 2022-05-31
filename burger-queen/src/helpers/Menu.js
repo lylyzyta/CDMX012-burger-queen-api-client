@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { NewOrder } from "./NewOrder";
-import { sendOrder } from "./sendNewOrder";
 
 export default function Menu(prop) {
 
   const [listOrder, setListOrder] = useState([])
   const [productstoSend, setproductstoSend] = useState([])
   const [products, setProducts] = useState([]);
+  const [total, setTotal] = useState([])
   
 
 
@@ -37,6 +37,7 @@ export default function Menu(prop) {
     } setListOrder([...listOrder, product])
     const qtyProducts = { qty: 1, product: product.item }
     setproductstoSend([...productstoSend, qtyProducts])
+    setTotal([...total, {sub: product.price, id: product.id}])
     
   }
 
@@ -57,12 +58,14 @@ export default function Menu(prop) {
       <div className="container-new-order">
 
 
-        <NewOrder className="orderForm" product={listOrder} deleteItem={deleteItem} productstoSend={productstoSend} setproductstoSend={setproductstoSend} />
+        <NewOrder className="orderForm" product={listOrder} deleteItem={deleteItem} productstoSend={productstoSend} setproductstoSend={setproductstoSend} setTotal={setTotal} total={total} />
 
 
 
         <button type="button" id="cancelOrder" className="btn-cancel-order" onClick={() => {
           setListOrder([])
+          setproductstoSend([])
+          setTotal([])
         }
         }>
           {" "}

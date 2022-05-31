@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import "./NewOrder.css";
-import { sendOrder } from "./sendNewOrder";
 
 
-const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend }) => {
+
+const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend, setTotal, total }) => {
 
   //Fecha
   const timeElapsed = Date.now();
@@ -16,16 +16,16 @@ const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend }) =>
   const shortDate = day + "/" + month + "/" + year;
   const time = hours + ":" + minutes
 
-  useEffect(() => {
 
-  }, [])
 
-  
+
 
   const sum = (e) => {
     const updateProduct = []
+    const updatePrice = []
     document.getElementById(e.id).textContent = parseInt(document.getElementById(e.id).textContent) + 1;
     document.getElementById(e.id + "price").textContent = "$ " + document.getElementById(e.id).textContent * e.price;
+    const subtotal = { sub: document.getElementById(e.id).textContent * e.price, id: e.id }
     const qtyArray = { qty: parseInt(document.getElementById(e.id).textContent), product: e.item }
     for (product of productstoSend) {
       if (product.product === e.item) {
@@ -35,13 +35,33 @@ const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend }) =>
       }
     }
     setproductstoSend(updateProduct)
-  }
+    for (let sub of total) {
+      if (sub.id === e.id) {
+        updatePrice.push(subtotal)
+      } else {
+        updatePrice.push(sub)
+      }
+    }
+    setTotal(updatePrice)
 
+  }
+const [totalPrices, setTotalPrices]= useState(0)
+  useEffect(()=>{
+    const totalArray = []
+    total.map((each) => {
+      totalArray.push(each.sub);
+    })
+     setTotalPrices(totalArray.reduce((a, b) => a + b, 0))
+  }, [total])
+  
 
 
   const rest = (e) => {
     const updateProduct = []
+    const updatePrice = []
     document.getElementById(e.id).textContent = parseInt(document.getElementById(e.id).textContent) - 1;
+    document.getElementById(e.id + "price").textContent = "$ " + document.getElementById(e.id).textContent * e.price;
+    const subtotal = { sub: document.getElementById(e.id).textContent * e.price, id: e.id }
     const qtyArray = { qty: parseInt(document.getElementById(e.id).textContent), product: e.item }
     for (product of productstoSend) {
       if (product.product === e.item) {
@@ -51,11 +71,15 @@ const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend }) =>
       }
     }
     setproductstoSend(updateProduct)
+    for (let sub of total) {
+      if (sub.id === e.id) {
+        updatePrice.push(subtotal)
+      } else {
+        updatePrice.push(sub)
+      }
+    }
+    setTotal(updatePrice)
   }
-
-
-
-
 
 
 
@@ -68,8 +92,6 @@ const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend }) =>
     dateEntry: time,
     dateProcessed: shortDate,
   };
-
-
 
 
 
@@ -106,8 +128,10 @@ const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend }) =>
           </div>
 
         ))}
-        <button type="button" className="sumButton" onClick={() => sendToKitchen()}>Kitchen</button>
-
+       <div className="total">
+       <button type="button" className="sumButton" onClick={() => sendToKitchen()}>Kitchen</button>
+       <p className="plusItems" >  TOTAL $ {totalPrices}</p>
+       </div>
       </form>
 
 

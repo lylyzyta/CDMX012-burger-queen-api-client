@@ -48,6 +48,8 @@
     color: white;
     margin-top:5px;
     cursor: pointer; 
+    text-align: center;
+    
 }
 .sumbutton{
     width: .5em;
@@ -55,11 +57,20 @@
     font-style: bold ;
     align-items: center;
     color:black;
-    
 }
 
 .container-new-order{
     display: flex;
     flex-direction: row;
     overflow-y: scroll;
+}
+.subtotal{
+    color: white;
+    font-size: 1.5em;
+    font-style: bold ;
+    align-items: center;
+}
+.total{
+    margin-top: 1em;
+    display: flex;
 }
