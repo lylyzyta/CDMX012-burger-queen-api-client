@@ -1,9 +1,134 @@
-.container-admin{
-    display: flex;
-    flex-direction: column;
-    width:100%;
-   height: 100%;
-   background-image: url(../../img/backgroundadmin.png);
-   background-repeat: no-repeat;
-  }
+.container-admin {
+  display: grid;
+  grid-template-columns: 10% 90%;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../../img/backgroundadmin.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   
+}
+.titles-control-panel {
+  text-align: center;
+  color: wheat;
+  font-size: 2.5vmax;
+  height: 10%;
+  margin-top: 20px;
+}
+.container-option-control-panel {
+  display: flex;
+  flex-direction: rows;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: #43537f82;
+}
+.logo-icon-admin {
+  width: 120px;
+  height: 120px;
+  margin: 45px;
+}
+.btn-option-panel {
+  background-color: #43537f;
+  color: wheat;
+  height: 4%;
+  margin-bottom: 100px;
+}
+.container-show-control-panel {
+    overflow: scroll;
+   
+
+}
+.data-control-panel{
+    width: 94%;
+   margin-left: 55px;
+}
+
+.column-control-panel{
+  color: wheat;
+  border: 5px solid #43537f;
+  background-color: #43537fc6;
+  width:auto;
+  height: 5vmax;
+}
+.row-control-panel{
+  color: wheat;
+  background-color: #473125bb;
+  border: 5px solid #43537f;
+  width:auto;
+  text-align: center;
+ }
+.icon-edit {
+  width: 3vmax;
+  height: 3vmax;
+}
+.icon-delete {
+  width: 3vmax;
+  height: 3vmax;
+}
+.btn-add-item {
+  align-self: flex-end;
+  background-color: #43537f;
+  color: wheat;
+  width: 20%;
+  height: 5%;
+  margin-left: 55px;
+}
+.btn-add-item-form{
+    align-self: flex-end;
+    background-color: #43537f;
+    color: wheat;
+    width: 60%;
+    height: 50%; 
+    margin-left: 30px;  
+}
+.btn-return-item-form{
+    align-self: flex-end;
+    background-color: #43537f;
+    color: wheat;
+    width: 40%;
+    height: 50%; 
+    margin-left: 200px;
+
+}
+.icon-product {
+  width: 3vmax;
+  height: 3vmax;
+}
+.container-form-new-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 70%;
+  height: 70%;
+  
+  margin-left: 390px;
+  
+}
+.create-form {
+  display: flex;
+  grid-template-columns: 40% 60%;
+  display: grid;
+  flex-direction: rows;
+  flex-wrap: wrap;
+  width: 70%;
+  height: 70%;
+}
+.label-form-text {
+  background-color: beige;
+  height: 40%;
+  color: rgb(138, 120, 138);
+  font-size: 20px;
+}
+.input-form-text {
+  background-color: beige;
+  color: black;
+  height: 40%;
+  font-size: 20px;
+}
+.input-form-radio {
+  background-color: beige;
+  color: wheat;
+  height: 40%;
+  font-size: 20px;
+}

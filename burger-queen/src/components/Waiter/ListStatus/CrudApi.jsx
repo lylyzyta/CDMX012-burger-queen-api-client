@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { helpHttp } from "../../../helpers/helpHttp";
-import CrudDashboard from "../ListStatus/OrderDashboard/CrudDashboard";
+import CrudForm from "./CrudForm";
+import CrudTable from "./OrderStatus/CrudTable";
 import Loader from "./Loader";
 import Message from "./Message";
-import '../ListStatus/table.css';
+import style from '../ListStatus/CrudApi.module.css';
 
 const CrudApi = () => {
 
   const [db, setDb] = useState(null);
-  const [dataToEdit, setDataToEdit] = useState(null);
+  const [editOrder, setEditOrder] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   let api = helpHttp();
-  let url = "http://localhost:5000/orders";
+  let url = "https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/orders";
 
   useEffect(() => {
     setLoading(true);
@@ -31,6 +32,46 @@ const CrudApi = () => {
         setLoading(false);
       });
   }, [url]);
+
+  const createData = (data) => {
+
+    data.id = Date.now();
+    //console.log(data);
+
+    let options = {
+      body: data,
+      headers: { "content-type": "application/json" },
+    };
+
+    api.post(url, options).then((res) => {
+      //console.log(res);
+      if (!res.err) {
+        setDb([...db, res]);
+      } else {
+        setError(res);
+      }
+    });
+  };
+
+  const updateData = (data) => {
+    let endpoint = `${url}/${data.id}`;
+    //console.log(endpoint);
+
+    let options = {
+      body: data,
+      headers: { "content-type": "application/json" },
+    };
+
+    api.put(endpoint, options).then((res) => {
+      //console.log(res);
+      if (!res.err) {
+        let newData = db.map((el) => (el.id === data.id ? data : el));
+        setDb(newData);
+      } else {
+        setError(res);
+      }
+    });
+  };
 
   const deleteData = (id) => {
     let isDelete = window.confirm(
@@ -58,9 +99,7 @@ const CrudApi = () => {
   };
 
   return (
-    <div className="container-background">
-      <article className="box-general">
-
+      <article className={style.boxGeneral}>
         {loading && <Loader />}
         {error && (
           <Message
@@ -69,14 +108,19 @@ const CrudApi = () => {
           />
         )}
         {db && (
-          <CrudDashboard
+          <CrudTable
             data={db}
-            setDataToEdit={setDataToEdit}
+            setEditOrder={setEditOrder}
             deleteData={deleteData}
           />
         )}
+        <CrudForm
+          createData={createData}
+          updateData={updateData}
+          editOrder={editOrder}
+          setEditOrder={setEditOrder}
+        />
       </article>
-    </div>
   );
 };
 

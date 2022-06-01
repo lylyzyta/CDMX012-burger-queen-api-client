@@ -1,4 +1,3 @@
-import "./Kitchen.css";
 import { logout } from "../../lib/firebaseAuth";
 import { auth } from "../../lib/firebaseConfig";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +6,7 @@ import { helpHttp } from "../../helpers/helpHttp";
 import CrudDashboard from "../Kitchen/ListStatus/OrderDashboard/CrudDashboard";
 import Loader from "../Kitchen/ListStatus/Loader";
 import Message from "../Kitchen/ListStatus/Message";
-
+import style from '../Kitchen/Kitchen.module.css'
 
 export default  function KitchenPage () {
 
@@ -18,15 +17,11 @@ export default  function KitchenPage () {
         navigate('/');
     };
 
-
-
     const [db, setDb] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-
-  let api = helpHttp();
-  let url = "http://localhost:3004/orders";
+  let url = "https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/orders";
 
   useEffect(() => {
     setLoading(true);
@@ -45,45 +40,12 @@ export default  function KitchenPage () {
       });
   }, [url]);
 
-
-  const setChangeStatus = (data) => {
-    let endpoint = `${url}/${data.id}`;
-    //console.log(endpoint);
-
-    let options = {
-      body: data,
-      headers: { "content-type": "application/json" },
-    };
-
-    api.put(endpoint, options)
-    .then((res) => {
-      console.log(res);
-      if (!res.err) {
-        let newData = db.map((el) => (el.id === data.id ? data : el));
-        let filterData = db.map((el) => (el.status === 'pending' ? data.status.replace("pending", "ready to serve") : false));
-        /* if (data.status === 'pending'){
-            let change = data.status.replace("pending", "ready to serve")
-            console.log(change)
-        } */
-        console.log(filterData)
-        setDb(newData);
-      } else {
-        setError(res);
-      }
-    });
-  };
-
-
-
-
-
-
     return(
-        <div className="container-kitchen">
-            <div className="headerKitchen">
-                <h3 className="container-head-h3" onClick={handleClick}>Salir</h3>
+        <div className={style.containerKitchen}>
+            <div className={style.headerKitchen}>
+                <h3 className={style.headH3} onClick={handleClick}>Salir</h3>
             </div>
-            <article className="box-generalKitchen">
+            <article className={style.boxGeneralKitchen}>
                 {loading && <Loader />}
                 {error && (
                 <Message
@@ -93,11 +55,8 @@ export default  function KitchenPage () {
                 )}
                 {db && (
                 <CrudDashboard
-                    data={db}
-                    setChangeStatus={setChangeStatus}
-                    
-               />)}
-
+              data={db}
+              />)}
             </article>
         </div>
     );

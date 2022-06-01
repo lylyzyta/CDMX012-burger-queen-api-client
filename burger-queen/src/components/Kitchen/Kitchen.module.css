@@ -1,0 +1,34 @@
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+  }
+  .containerKitchen{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height: 100%;
+    background-image: url(../../img/backgroundkitchen.png);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    }
+  .headerKitchen{
+    height: fit-content;
+  }
+  .boxGeneralKitchen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    align-items: center;
+  }
+.headH3{
+  color: white;
+}

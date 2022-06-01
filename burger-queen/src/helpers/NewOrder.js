@@ -1,84 +1,144 @@
 import { useEffect, useState } from "react"
 import "./NewOrder.css";
 
-const NewOrder = ({ product, deleteItem }) => {
+const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend, setTotal, total, setListOrder }) => {
+  const [table, setTable] = useState(1)
+  //Fecha
+  const timeAndDate = Date.now();
+  const today = new Date(timeAndDate);
+  const month = today.getMonth() + 1
+  const day = today.getDate();
+  const year = today.getFullYear();
+  const hours = today.getHours();
+  const minutes = today.getMinutes();
+  const shortDate = day + "/" + month + "/" + year;
+  const time = hours + ":" + minutes
+  //agrega cantidad a los productos
+  const sum = (e) => {
+    const updateProduct = []
+    const updatePrice = []
+    document.getElementById(e.id).textContent = parseInt(document.getElementById(e.id).textContent) + 1;
+    document.getElementById(e.id + "price").textContent = "$ " + document.getElementById(e.id).textContent * e.price;
+    const subtotal = { sub: document.getElementById(e.id).textContent * e.price, id: e.id }
+    const qtyArray = { qty: parseInt(document.getElementById(e.id).textContent), product: e.item }
+    for (product of productstoSend) {
+      if (product.product === e.item) {
+        updateProduct.push(qtyArray)
+      } else {
+        updateProduct.push(product)
+      }
+    }
+    setproductstoSend(updateProduct)
+    for (let sub of total) {
+      if (sub.id === e.id) {
+        updatePrice.push(subtotal)
+      } else {
+        updatePrice.push(sub)
+      }
+    }
+    setTotal(updatePrice)
+  }
+  //el $ total de la orden
+  const [totalPrices, setTotalPrices] = useState(0)
+  useEffect(() => {
+    const totalArray = []
+    total.map((each) => {
+      totalArray.push(each.sub);
+    })
+    setTotalPrices(totalArray.reduce((a, b) => a + b, 0))
+  }, [total])
 
-const [productstoSend, setproductstoSend] = useState([])
-  const [quantityF, setquantityF] = useState(0)
-  var convertedStartDate = new Date();
-  var month = convertedStartDate.getMonth() + 1
-  var day = convertedStartDate.getDay();
-  var year = convertedStartDate.getFullYear();
-  var shortStartDate = month + "/" + day + "/" + year;
+  // quita productos a la órden
+  const rest = (e) => {
+    const updateProduct = []
+    const updatePrice = []
+    document.getElementById(e.id).textContent = parseInt(document.getElementById(e.id).textContent) - 1;
+    document.getElementById(e.id + "price").textContent = "$ " + document.getElementById(e.id).textContent * e.price;
+    const subtotal = { sub: document.getElementById(e.id).textContent * e.price, id: e.id }
+    const qtyArray = { qty: parseInt(document.getElementById(e.id).textContent), product: e.item }
+    for (product of productstoSend) {
+      if (product.product === e.item) {
+        updateProduct.push(qtyArray)
+      } else {
+        updateProduct.push(product)
+      }
+    }
+    setproductstoSend(updateProduct)
+    for (let sub of total) {
+      if (sub.id === e.id) {
+        updatePrice.push(subtotal)
+      } else {
+        updatePrice.push(sub)
+      }
+    }
+    setTotal(updatePrice)
+  }
+  function changeTable(e) {
+    setTable(e.target.value)
+  }
+
+  //órden a mandar
 
   const initialForm = {
-    id: 3 + 23,
-    userId: "waiter#",
-    client: 3,
+    id: table + " at " + time,
+    userId: "waiter",
+    client: table,
     products: productstoSend,
     status: "pending",
-    dateEntry: shortStartDate,
-    dateProcessed: shortStartDate,
+    dateEntry: time,
+    timeEntry: time,
+    dateProcessed: time,
   };
-
-  console.log(initialForm, "cómo se va");
-
-
-  const [total, setTotal] = useState([])
-  function sumar(each) {
-   /*  setTotal(e.target.value)
-    console.log(e.target.value);
-  } */
-
-  setquantityF( document.getElementById(each.id).value);
-  const subtotal = quantityF * each.price;
-  const result = productstoSend.some(obj => obj.product === each.item);
-  console.log(result);
-
-  if (result === false) {
-    const producttS = { qty: quantityF, product: each.item }
-    setproductstoSend([...productstoSend, producttS])
+  //manda la órden a cocina
+  function sendToKitchen() {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(initialForm)
+    };
+    fetch('https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/orders', requestOptions)
+      .then(response => response.json())
+      .then(data => console.log(data))
+    alert("Sent to Kitchen")
+    setListOrder([])
+    setproductstoSend([])
+    setTotal([])
+    setTable(1)
   }
-  console.log(productstoSend, "quedó");
 
 
-}
 
-  console.log({product})
   return (
     <div className="orderForm" >
-    {/*   <form action="">
-        {product.map((each) => (
-          <div className="row" key={each.item}>
-            <input type="number" className="orderInputs" onChange={sumar} />
-            <p >{each.item}{each.price}{total * each.price}</p>
-            <button onClick={() => deleteItem(each)} >Borrar artículo</button>
-          </div>
-        ))}
-
-
-      </form> */}
-
-<form action="">
-       {product.map((each) => (
-        <div className="row" key={each.item}>
-          <input id={each.id} className="qty" min={1} max={12} type="number" onChange={() => sumar(each)} defaultValue={0} />
-          <p >{each.item}</p><p> {each.price}</p><button className="deleteButton" onClick={() => deleteItem(each)} >Borrar artículo</button>
-          
+      <p className="plusItems">Table</p>
+      <input type="number" id="table" className="offset" min={1} max={8} defaultValue={1} onChange={changeTable} />
+      {product.map((each) => (
+        <div className="row" key={each.item}>{ }
+          <button type="button" onClick={() => sum(each)} className="sumButton" >+</button>
+          <p className="qty" id={each.id} >1</p>
+          <button type="button" onClick={() => rest(each)} className="sumButton" >-</button>
+          <p className="plusItems" >{each.item}</p>
+          <p className="plusItems" > $ {each.price}</p>
+          <p className="subtotal" id={each.id + "price"} >$ {each.price}</p>
+          <button className="deleteButton" type="button" onClick={() => deleteItem(each)} >Clear</button>
         </div>
       ))}
-</form>
-
-
-     
+      <div className="total">
+        <button type="button" className="downButton" onClick={() => sendToKitchen()}>Kitchen</button>
+        <p className="plusItems" >  TOTAL $ {totalPrices}</p>
+        <button type="button" id="cancelOrder" className="downButton" onClick={() => {
+          setListOrder([])
+          setproductstoSend([])
+          setTotal([])
+          setTable(1)
+        }
+        }>
+          Cancel Order
+        </button>
+      </div>
     </div>
   )
-
 }
-
-
-
-
 
 export {
   NewOrder,

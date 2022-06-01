@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import style from './CrudForm.module.css';
 
 const initailForm = {
   userId: "",
@@ -6,7 +7,7 @@ const initailForm = {
   status: "",
   products: [
     {
-      quantity: "",
+      qty: "",
       product: "",
     }
   ],
@@ -15,16 +16,16 @@ const initailForm = {
   id: null,
 };
 
-const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
+const CrudForm = ({ createData, updateData, editOrder, setEditOrder }) => {
   const [form, setForm] = useState(initailForm);
 
   useEffect(() => {
-    if (dataToEdit) {
-      setForm(dataToEdit);
+    if (editOrder) {
+      setForm(editOrder);
     } else {
       setForm(initailForm);
     }
-  }, [dataToEdit]);
+  }, [editOrder]);
 
   const handleChange = (e) => {
     console.log(e.target.name)
@@ -57,66 +58,100 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
 
   const handleReset = (e) => {
     setForm(initailForm);
-    setDataToEdit(null);
+    setEditOrder(null);
   };
 
   return (
-    <div className="container-formStatus">
-      <h3>{dataToEdit ? "Edit" : "Add"}</h3>
-      <form onSubmit={handleSubmit}>
-        <input
+    <div className={style.containerFormStatus}>
+      <h3 className={style.titleTable}>{editOrder ? "Edit Order" : "Edit Order"}</h3>
+      <form className={style.form}onSubmit={handleSubmit}>
+      <h3 className={style.titleForm}>Order Form</h3>
+      <section className={style.boxForm}>
+      <label className={style.labelForm}> Order Id:  </label>
+      <input className={style.inputForm}
+          type="text"
+          name="id"
+          placeholder="Order id"
+          onChange={handleChange}
+          value={form.id}
+        />
+
+      <label className={style.labelForm}> User Id: </label>
+        <input className={style.inputForm}
           type="text"
           name="userId"
           placeholder="User Id"
           onChange={handleChange}
           value={form.userId}
         />
-        <input
+
+        <label className={style.labelForm}> Client:</label>
+        <input className={style.inputForm}
           type="text"
           name="client"
           placeholder="Client"
           onChange={handleChange}
           value={form.client}
         />
-        <input
+
+
+      <label className={style.labelForm}> Status:</label>
+      <input className={style.inputForm}
           type="text"
           name="status"
           placeholder="Status"
           onChange={handleChange}
           value={form.status}
         />
-        <input
+
+
+        <label className={style.labelForm}> Date Entry:
+        </label>
+        <input className={style.inputForm}
           type="text"
           name="dateEntry"
           placeholder="Date Entry"
           onChange={handleChange}
           value={form.dateEntry}
         />
-        <input
+
+
+        <label className={style.labelForm}> Date Processed:</label>
+        <input className={style.inputForm}
           type="text"
           name="dateProcessed"
           placeholder="Date Processed"
           onChange={handleChange}
           value={form.dateProcessed}
         />
+
         {form.products && form.products.map((product)=>
           <>
-            <input
-              type="text"
-              name={product['quantity']}
-              placeholder="Quantity"
-              onChange={handleChange}
-              value={product.quantity} />
-            <input
+          <label className={style.labelForm}> Quantity: </label>
+          <input className={style.inputForm}
+                type="text"
+                name={product['qty']}
+                placeholder="Quantity"
+                onChange={handleChange}
+                value={product.quantity} />
+
+          
+          <label className={style.labelForm}> Product:
+          </label>
+          <input className={style.inputForm}
               type="text"
               name="product"
               placeholder="Product"
               onChange={handleChange}
               value={product.product} />
+
           </>
         )}
-        <input type="submit" value="Enviar" />
-        <input type="reset" value="Limpiar" onClick={handleReset} />
+        <section className={style.btnAccions}>
+          <input className={style.btnForm} type="submit" value="Send Order" />
+          <input className={style.btnForm} type="reset" value="Clean Form" onClick={handleReset} />
+        </section>
+        </section>
       </form>
     </div>
   );
