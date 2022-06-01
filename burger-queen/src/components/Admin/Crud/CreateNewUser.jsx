@@ -1,4 +1,6 @@
+import "./../Admin.css";
 import { useState } from "react";
+import Read from "./Read";
 
 export default function CreateNewUser() {
   const [name, setName] = useState("");
@@ -54,12 +56,14 @@ export default function CreateNewUser() {
             onChange={(e) => setRol(e.target.value)}
           />
 
-          <button className="btn-add-item" onClick={postDataUsers}>
+          <button className="btn-add-item-form" onClick={postDataUsers}>
             Add User
           </button>
+          <button className="btn-return-item-form" onClick={<Read />}>
+            Return
+          </button>
         </form>
-
-      
+             
       </section>
     </section>
   );

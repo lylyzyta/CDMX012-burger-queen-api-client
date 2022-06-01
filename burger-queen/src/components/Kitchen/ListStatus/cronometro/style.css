@@ -1,0 +1,17 @@
+  .timer-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .text {
+    margin-top: 35px;
+  }
+  .value {
+    font-size: 30px;
+  }
+

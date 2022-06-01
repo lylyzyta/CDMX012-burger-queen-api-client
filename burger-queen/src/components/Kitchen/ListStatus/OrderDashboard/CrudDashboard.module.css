@@ -1,0 +1,34 @@
+
+.containerOrderHistoryKitchen{
+    width: 90%;
+    height: 80%;
+    border: 10px solid #DCAA7B;
+    background-color: #2b070776;
+    border-radius: 20px;
+    float: left;
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+.titleTable {
+    font-size: 2em;
+    height: auto;
+    margin: 10px 5px;
+    color: white;
+    text-align: center;
+}
+.table {
+    width: 100%;
+    margin-top: 50px;
+}
+.titleColumns{
+    text-align:center;
+    padding: 0.5rem;
+    border-bottom: thin solid rgb(149, 3, 3);
+    height: auto;
+    width: fit-content;
+    color: white;
+    background: rgb(149, 3, 3);
+}
+
+
+

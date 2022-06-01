@@ -1,0 +1,86 @@
+.containerFormStatus{
+  width: 100%;
+  height: 100%;
+  border: 10px solid #d58941;
+  background-color: #2b070776;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.inputForm {
+    border: thin solid #9f2525;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #F6E7D8;
+    height: auto;
+    color: #9f2525;
+    margin-left: 10px;
+  }
+  .inputForm::placeholder {
+    color: #9f2525;
+  }
+  .btnAccions{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0;
+
+  }
+  .btnForm {
+    width: fit-content;
+    background-color: #9f2525;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem 0 0;
+    display: inline-block;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.2rem;
+  }
+  .form {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: auto;
+  }
+  .titleTable {
+      font-size: 2em;
+      height: auto;
+      margin: 10px 5px;
+      color: white;
+      text-align: center;
+  }
+.titleForm{
+  background: rgb(149, 3, 3);
+  color: white;
+  height: auto;
+  padding: 10px;
+}
+.labelForm{
+color: #9f2525;
+font-weight: bolder;
+text-align: start;
+width: 100%;
+margin: 10px;
+}
+.boxForm{
+margin-top: 20px;
+border-radius: 10px;
+width: fit-content;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start;
+height: auto;
+}

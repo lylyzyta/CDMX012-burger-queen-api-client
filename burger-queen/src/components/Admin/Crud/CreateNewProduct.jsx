@@ -1,3 +1,4 @@
+import "./../Admin.css";
 import { useState } from "react";
 
 export default function CreateNewProduct() {

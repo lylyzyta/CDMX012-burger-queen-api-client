@@ -39,6 +39,9 @@ export default  function AdminPage () {
             {" "}
            Kitchen status
           </button>
+          <button className="btn-option-panel" onClick={handleClick}>
+           LogOut
+          </button>
                 
             </section>
 

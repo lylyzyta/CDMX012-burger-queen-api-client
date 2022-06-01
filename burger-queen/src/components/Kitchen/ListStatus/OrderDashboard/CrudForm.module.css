@@ -1,0 +1,16 @@
+.btnSendWaiter{
+    background: rgb(44, 125, 71);
+    color: white;
+    width: 80%;
+    border: 2px solid white;
+    font-size: 15px;
+    border-radius: 15px;
+    padding: 5px;
+    height: fit-content;
+}
+.titleSendWaiter{
+    height: auto;
+}
+.sendWaiter{
+    height: auto;
+}

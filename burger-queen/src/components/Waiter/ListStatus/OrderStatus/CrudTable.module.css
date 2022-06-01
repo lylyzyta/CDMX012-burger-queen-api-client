@@ -1,0 +1,44 @@
+
+.containerOrderStatus{
+    width: 100%;
+    height: 100%;
+    border: 10px solid #d58941;
+    background-color: #2b070776;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    border-radius: 20px;
+    float: left;
+}
+.headerTable{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+}
+.titleTable {
+    font-size: 2em;
+    height: auto;
+    margin: 10px 5px;
+    color: white;
+    text-align: center;
+}
+.table {
+    width: 100%;
+    margin-top: 20px;
+}
+.titleColumns{
+    text-align:center;
+    padding: 0.5rem;
+    border-bottom: thin solid rgb(149, 3, 3);
+    height: fit-content;
+    width: fit-content;
+    color: white;
+    background: rgb(149, 3, 3);
+}
+.headTable{
+    background-color: rgb(149, 3, 3);
+    color: white;
+    font-weight: bolder;
+    height: auto;
+}
+
