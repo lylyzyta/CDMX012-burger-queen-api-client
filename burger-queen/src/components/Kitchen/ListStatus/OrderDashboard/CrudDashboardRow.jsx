@@ -111,13 +111,19 @@ console.log(secondDate);*/
         <td className={style.rowOrderDashboard}>{dateEntry}</td>
         <td className={style.rowOrderDashboard}>{dateProcessed}</td>
         <td className={style.rowOrderDashboard}>
+        {status === 'pending' ?
+        <div>
         {!startCounter ? <button className={style.btnStart} type="button" onClick={countTime}>Start</button>: <Timer/>}
+        </div>: ''}
         </td>
         <td className={style.rowOrderDashboard}>
+        {status !== 'Deliver'?
+        <div>
         {!startButton ? <button className={style.btnServe} type="button" onClick={handleSubmit}>Ready to serve</button>:<CrudForm
               updateData={updateData}
               dataToEdit={dataToEdit}
         />}
+        </div> : ''}
         </td>
       </tr>
   );
