@@ -30,7 +30,7 @@ const CrudForm = ({ updateData, dataToEdit }) => {
   return (
     <div className={style.sendWaiter}>
     {!startButton ? <button className={style.btnSendWaiter} type="submit" onClick={handleSubmit}>Send to waiter</button> : <h1 className={style.titleSendWaiter}>Successful!!</h1> }
-    </div>
+    </div> 
   );
 };
 

@@ -83,6 +83,8 @@ const updateData = (data) => {
         <td className={style.rowOrderDashboard}>{<StatusType/>}</td>
         <td  className={style.rowOrderDashboard}>{dateProcessed}</td>
         <td  className={style.rowOrderDashboard}>
+        {status !=='Deliver' ?
+        <div>
           <button className={style.btnStatus} onClick={() => setEditOrder(el)}>
             <img className={style.icon} src={editIcon} alt='edit-icon'/>
           </button>
@@ -94,6 +96,7 @@ const updateData = (data) => {
               updateData={updateData}
               dataToEdit={dataToEdit}
         />}
+        </div>: ''}
           </td>
 
         

@@ -31,14 +31,6 @@ export default  function AdminPage () {
             {" "}
            Products
           </button>
-          <button type="button" className="btn-option-panel" value="waiter" onClick={(e) => setFilterPanel(e.target.value)}>
-            {" "}
-           Waiter status
-          </button>
-          <button type="button" className="btn-option-panel" value="kitchen" onClick={(e) => setFilterPanel(e.target.value)}>
-            {" "}
-           Kitchen status
-          </button>
           <button className="btn-option-panel" onClick={handleClick}>
            LogOut
           </button>

@@ -88,6 +88,14 @@ export default function Read(prop) {
         url === "https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/user" ? (
           <section className="container-show-control-panel">
             <h3 className="titles-control-panel">Users List</h3>
+            <button
+                type="button"
+                className="btn-add-item"
+                value="adduser"
+                onClick={() => setRenderOptions(false)}
+              >
+                Add New User
+              </button>
             <table className="data-control-panel" >
               <thead>
                 <tr>
@@ -126,19 +134,20 @@ export default function Read(prop) {
                 </tr>
               ))}
               </table>
-              <button
-                type="button"
-                className="btn-add-item"
-                value="adduser"
-                onClick={() => setRenderOptions(false)}
-              >
-                Add New User
-              </button>
+            
            
           </section>
         ) : (
           <section className="container-show-control-panel">
             <h3 className="titles-control-panel">Product List</h3>
+            <button
+                type="button"
+                className="btn-add-item"
+                value="addproduct"
+                onClick={() => setRenderOptions(false)}
+              >
+                Add New Product
+              </button>
             <table  className="data-control-panel">
               <thead>
                 <tr>
@@ -184,14 +193,7 @@ export default function Read(prop) {
                 </tr>
               ))}
            </table>
-              <button
-                type="button"
-                className="btn-add-item"
-                value="addproduct"
-                onClick={() => setRenderOptions(false)}
-              >
-                Add New Product
-              </button>
+            
            
           </section>
         )
