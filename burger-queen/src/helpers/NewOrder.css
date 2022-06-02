@@ -28,7 +28,7 @@
 .row {
     display: grid;
     color: white;
-    grid-template-columns:8% 9% 8% 30% 15% 15% 15% ;
+    grid-template-columns:5% 5% 10% 40% 15% 15% 15% ;
     
     width: 100%;
     height: 100%;
@@ -37,12 +37,18 @@
     color:white;
     font-size: 1.5em;
 }
-.deleteButton {
-    margin-top:5px;
-    cursor: pointer; 
-    color: white;
 
+.deleteButton {
+    width: .5em;
+    font-size: 1em;
+    font-style: bold ;
+    align-items: center;
+    color:white;
+    cursor: pointer;
+    background-color: transparent;
 }
+
+
 .qty {
     font-size: 1.5em;
     color: white;
@@ -51,12 +57,14 @@
     text-align: center;
     
 }
-.sumbutton{
+.sumButton{
     width: .5em;
-    font-size: 2em;
+    font-size: 1.5em;
     font-style: bold ;
     align-items: center;
-    color:black;
+    color:white;
+    cursor: pointer;
+    background-color: transparent;
 }
 
 .container-new-order{
@@ -73,4 +81,15 @@
 .total{
     margin-top: 1em;
     display: flex;
+}
+.downButton{
+    background-color: transparent;
+    font-size: 1.5em;
+    font-style: bold ;
+    align-items: center;
+    color:white;
+    cursor: pointer;
+    border: 4px solid #d58841ce;
+    border-radius: 20px;
+    border-width: .15em;
 }

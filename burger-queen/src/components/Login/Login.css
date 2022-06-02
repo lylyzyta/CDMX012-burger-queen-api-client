@@ -10,16 +10,18 @@
 
 .container-login{
     display: flex;
+    height: 100vh;
     justify-content: center;
     align-content: center;
     flex-direction: row;
     align-items:center;
     background-image: url(../../img/background.png);
     background-repeat: no-repeat;
+    background-size:cover;
   }
   .register-container{
     width: auto;
-    height: 85%;
+    height: 90%;
     padding: 40px;
     display: grid;
     grid-template-rows: auto;

@@ -1,0 +1,73 @@
+.rowOrderDashboard {
+    text-align:center;
+    padding: 0.5rem;
+    border-bottom: thin solid white;
+    height: auto;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+.listProducts{
+    font-size: 1em;
+    color: black;
+    text-align:start;
+    padding: 2px;
+    margin: 5px;
+    height: auto;
+}
+.btnStart{
+    background: rgb(149, 3, 3);
+    color: white;
+    width: 70%;
+    border: 2px solid white;
+    border-radius: 15px;
+    height: auto;
+    padding: 5px;
+    font-weight: bolder;
+}
+.btnServe{
+    background: rgb(44, 45, 125);
+    color: white;
+    width: 80%;
+    border: 2px solid white;
+    font-size: 15px;
+    border-radius: 15px;
+    height: auto;
+    padding: 5px;
+    font-weight: bolder;
+}
+.deliverStatus{
+    color: rgb(43, 90, 13);
+    background-color: #a3d217;
+    border: 0.5px solid rgb(43, 90, 13);
+    border-radius: 10px;
+    width: fit-content;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    margin: auto;
+    height: auto;
+}
+.pendingStatus{
+    color: #956B0B;
+    background-color: #FFD36E;
+    border: 0.5px solid #956B0B;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    margin: auto;
+    height: auto;
+}
+.readyStatus{
+    color: rgb(44, 45, 125);
+    background-color: #9FB4FF;
+    border: 0.5px solid rgb(44, 45, 125);
+    border-radius: 10px;
+    width: fit-content;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    height: auto;
+    margin: auto;
+}

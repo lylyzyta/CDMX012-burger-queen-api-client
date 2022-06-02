@@ -2,13 +2,11 @@ import { useState, useEffect } from "react";
 import { NewOrder } from "./NewOrder";
 
 export default function Menu(prop) {
-
+ 
   const [listOrder, setListOrder] = useState([])
   const [productstoSend, setproductstoSend] = useState([])
   const [products, setProducts] = useState([]);
   const [total, setTotal] = useState([])
-  
-
 
   async function getResponse(url) {
     const response = await fetch(url);
@@ -16,7 +14,7 @@ export default function Menu(prop) {
   }
 
   useEffect(() => {
-    getResponse("http://localhost:3004/products").then((json) =>
+    getResponse("https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/products").then((json) =>
       setProducts(json)
     );
   }, []);
@@ -30,6 +28,12 @@ export default function Menu(prop) {
 
   }
 
+  function deleteItem(product) {
+    let deleteArray = [];
+    deleteArray = listOrder.filter(function (plate) { return plate !== product }); 
+    setListOrder(deleteArray);
+  }
+
   function pickingOrder(product) {
     const exists = listOrder.includes(product);
     if (exists) {
@@ -37,8 +41,7 @@ export default function Menu(prop) {
     } setListOrder([...listOrder, product])
     const qtyProducts = { qty: 1, product: product.item }
     setproductstoSend([...productstoSend, qtyProducts])
-    setTotal([...total, {sub: product.price, id: product.id}])
-    
+    setTotal([...total, { sub: product.price, id: product.id }])
   }
 
   
@@ -53,29 +56,19 @@ export default function Menu(prop) {
             </p>
           </section>
         ))}
-
-      </div>
-      <div className="container-new-order">
-
-
-        <NewOrder className="orderForm" product={listOrder} deleteItem={deleteItem} productstoSend={productstoSend} setproductstoSend={setproductstoSend} setTotal={setTotal} total={total} />
-
-
-
-        <button type="button" id="cancelOrder" className="btn-cancel-order" onClick={() => {
-          setListOrder([])
-          setproductstoSend([])
-          setTotal([])
-        }
-        }>
-          {" "}
-          Cancel Order
-        </button>
-
-      </div>
-
-
-
-    </section>
+        
+        </div>
+        <div className="container-new-order">
+          <NewOrder className="orderForm"
+          product={listOrder}
+          deleteItem={deleteItem}
+          productstoSend={productstoSend}
+          setproductstoSend={setproductstoSend}
+          setTotal={setTotal}
+          total={total}
+          setListOrder={setListOrder}
+        />
+     </div>
+     </section>
   );
 }

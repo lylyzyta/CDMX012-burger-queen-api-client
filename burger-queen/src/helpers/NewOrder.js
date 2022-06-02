@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react"
 import "./NewOrder.css";
 
-
-
-const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend, setTotal, total }) => {
-
+const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend, setTotal, total, setListOrder }) => {
+  const [table, setTable] = useState(1)
   //Fecha
-  const timeElapsed = Date.now();
-  const today = new Date(timeElapsed);
+  const timeAndDate = Date.now();
+  const today = new Date(timeAndDate);
   const month = today.getMonth() + 1
   const day = today.getDate();
   const year = today.getFullYear();
@@ -15,11 +13,7 @@ const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend, setT
   const minutes = today.getMinutes();
   const shortDate = day + "/" + month + "/" + year;
   const time = hours + ":" + minutes
-
-
-
-
-
+  //agrega cantidad a los productos
   const sum = (e) => {
     const updateProduct = []
     const updatePrice = []
@@ -43,19 +37,18 @@ const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend, setT
       }
     }
     setTotal(updatePrice)
-
   }
-const [totalPrices, setTotalPrices]= useState(0)
-  useEffect(()=>{
+  //el $ total de la orden
+  const [totalPrices, setTotalPrices] = useState(0)
+  useEffect(() => {
     const totalArray = []
     total.map((each) => {
       totalArray.push(each.sub);
     })
-     setTotalPrices(totalArray.reduce((a, b) => a + b, 0))
+    setTotalPrices(totalArray.reduce((a, b) => a + b, 0))
   }, [total])
-  
 
-
+  // quita productos a la órden
   const rest = (e) => {
     const updateProduct = []
     const updatePrice = []
@@ -80,21 +73,23 @@ const [totalPrices, setTotalPrices]= useState(0)
     }
     setTotal(updatePrice)
   }
+  function changeTable(e) {
+    setTable(e.target.value)
+  }
 
-
+  //órden a mandar
 
   const initialForm = {
-    id: day + time,
+    id: table + " at " + time,
     userId: "waiter",
-    client: 1 + day + time,
+    client: table,
     products: productstoSend,
     status: "pending",
     dateEntry: time,
-    dateProcessed: shortDate,
+    timeEntry: time,
+    dateProcessed: time,
   };
-
-
-
+  //manda la órden a cocina
   function sendToKitchen() {
     const requestOptions = {
       method: 'POST',
@@ -104,46 +99,46 @@ const [totalPrices, setTotalPrices]= useState(0)
     fetch('https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/orders', requestOptions)
       .then(response => response.json())
       .then(data => console.log(data))
-
+    alert("Sent to Kitchen")
+    setListOrder([])
+    setproductstoSend([])
+    setTotal([])
+    setTable(1)
   }
+
+
 
   return (
     <div className="orderForm" >
-
-
-      <form action="">
-        <p className="plusItems">Table</p>
-        <input type={"number"} id="table" className="offset" min={1} max={8} defaultValue={1} />
-        {product.map((each) => (
-
-          <div className="row" key={each.item}>{ }
-            <button type="button" onClick={() => sum(each)} className="sumButton" >+</button>
-            <p className="qty" id={each.id} >1</p>
-            <button type="button" onClick={() => rest(each)} className="sumButton" >-</button>
-            <p className="plusItems" >{each.item}</p>
-            <p className="plusItems" > $ {each.price}</p>
-            <p className="subtotal" id={each.id + "price"} >$ {each.price}</p>
-            <p className="deleteButton" onClick={() => deleteItem(each)} >Borrar</p>
-
-          </div>
-
-        ))}
-       <div className="total">
-       <button type="button" className="sumButton" onClick={() => sendToKitchen()}>Kitchen</button>
-       <p className="plusItems" >  TOTAL $ {totalPrices}</p>
-       </div>
-      </form>
-
-
-
+      <p className="plusItems">Table</p>
+      <input type="number" id="table" className="offset" min={1} max={8} defaultValue={1} onChange={changeTable} />
+      {product.map((each) => (
+        <div className="row" key={each.item}>{ }
+          <button type="button" onClick={() => sum(each)} className="sumButton" >+</button>
+          <p className="qty" id={each.id} >1</p>
+          <button type="button" onClick={() => rest(each)} className="sumButton" >-</button>
+          <p className="plusItems" >{each.item}</p>
+          <p className="plusItems" > $ {each.price}</p>
+          <p className="subtotal" id={each.id + "price"} >$ {each.price}</p>
+          <button className="deleteButton" type="button" onClick={() => deleteItem(each)} >Clear</button>
+        </div>
+      ))}
+      <div className="total">
+        <button type="button" className="downButton" onClick={() => sendToKitchen()}>Kitchen</button>
+        <p className="plusItems" >  TOTAL $ {totalPrices}</p>
+        <button type="button" id="cancelOrder" className="downButton" onClick={() => {
+          setListOrder([])
+          setproductstoSend([])
+          setTotal([])
+          setTable(1)
+        }
+        }>
+          Cancel Order
+        </button>
+      </div>
     </div>
   )
-
 }
-
-
-
-
 
 export {
   NewOrder,
