@@ -106,22 +106,20 @@ const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend, setT
     setTable(1)
   }
 
-
-
   return (
     <div className="orderForm" >
       <p className="plusItems">Table</p>
       <input type="number" id="table" className="offset" min={1} max={8} defaultValue={1} onChange={changeTable} />
       {product.map((each) => (
-        <div className="row" key={each.item}>{ }
-          <button type="button" onClick={() => sum(each)} className="sumButton" >+</button>
-          <p className="qty" id={each.id} >1</p>
-          <button type="button" onClick={() => rest(each)} className="sumButton" >-</button>
-          <p className="plusItems" >{each.item}</p>
-          <p className="plusItems" > $ {each.price}</p>
-          <p className="subtotal" id={each.id + "price"} >$ {each.price}</p>
-          <button className="deleteButton" type="button" onClick={() => deleteItem(each)} >Clear</button>
-        </div>
+          <tr className="row" key={each.item}>{ }
+          <td  onClick={() => sum(each)} className="sumButton" >+</td>
+          <td className="qty" id={each.id} >1</td>
+          <td  onClick={() => rest(each)} className="sumButton" >-</td>
+          <td className="plusItems" >{each.item}</td>
+          <td className="plusItems" > $ {each.price}</td>
+          <td className="subtotal" id={each.id + "price"} >$ {each.price}</td>
+          <td className="deleteButton"  onClick={() => deleteItem(each)} >Clear</td>
+        </tr>
       ))}
       <div className="total">
         <button type="button" className="downButton" onClick={() => sendToKitchen()}>Kitchen</button>
