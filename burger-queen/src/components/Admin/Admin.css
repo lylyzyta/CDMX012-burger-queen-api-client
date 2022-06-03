@@ -34,9 +34,9 @@
   margin-bottom: 100px;
 }
 .container-show-control-panel {
+  display: flex;
+  flex-direction: column;
     overflow: scroll;
-   
-
 }
 .data-control-panel{
     width: 94%;

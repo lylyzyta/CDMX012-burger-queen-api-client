@@ -1,5 +1,5 @@
-import React from "react";
-import CrudDashboardRow from "./CrudDashboardRow";
+import React from 'react';
+import CrudDashboardRow from './CrudDashboardRow';
 import style from './CrudDashboard.module.css';
 
 const CrudDashboard = ({ data, setDataToEdit }) => {
@@ -32,7 +32,7 @@ const CrudDashboard = ({ data, setDataToEdit }) => {
             ))
           ) : (
             <tr>
-              <td colSpan="3">Sin datos</td>
+              <td colSpan='3'>Sin datos</td>
             </tr>
           )}
         </tbody>

@@ -5,7 +5,7 @@ export const helpHttp = () => {
 
         // Define header to fetch
         const defaultHeader = {
-            accept: "application/json",
+            accept: 'application/json',
         };
 
         // Add a Abort controller to stop requests when the server no fixed
@@ -13,7 +13,7 @@ export const helpHttp = () => {
         options.signal = controller.signal;
 
         // Add methods to fetch
-        options.method = options.method || "GET";
+        options.method = options.method || 'GET';
         options.headers = options.headers  ? { ...defaultHeader, ...options.headers } : defaultHeader;
 
         // Add to body to fetch - Change to string the file JSON
@@ -31,8 +31,8 @@ export const helpHttp = () => {
             ? res.json()
             : Promise.reject({
                 err: true,
-                status: res.status || "00",
-                statusText: res.statusText || "Ocurrió un error",
+                status: res.status || '00',
+                statusText: res.statusText || 'Ocurrió un error',
             })
         )
         .catch((err) => err);
@@ -43,17 +43,17 @@ export const helpHttp = () => {
 
     // Fuction to post info into json file
     const post = (url, options = {}) => {
-        options.method = "POST";
+        options.method = 'POST';
         return customFetch(url, options);
     };
     // Fuction to put info into json file
     const put = (url, options = {}) => {
-        options.method = "PUT";
+        options.method = 'PUT';
         return customFetch(url, options);
     };
     // Fuction to delete info into json file
     const del = (url, options = {}) => {
-        options.method = "DELETE";
+        options.method = 'DELETE';
         return customFetch(url, options);
     };
 

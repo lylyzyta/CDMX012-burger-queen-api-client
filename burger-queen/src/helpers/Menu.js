@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { NewOrder } from "./NewOrder";
+import { useState, useEffect } from 'react';
+import { NewOrder } from './NewOrder';
 
 export default function Menu(prop) {
  
@@ -14,7 +14,7 @@ export default function Menu(prop) {
   }
 
   useEffect(() => {
-    getResponse("https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/products").then((json) =>
+    getResponse('https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/products').then((json) =>
       setProducts(json)
     );
   }, []);
@@ -47,19 +47,19 @@ export default function Menu(prop) {
   
   return (
     <section >
-      <div className="container-menu">
+      <div className='container-menu'>
         {products.filter(product => product.type === `${prop.option}`).map((products) => (
-          <section className="container-product" onClick={() => pickingOrder(products)} >
-            <img className="menu-img" src={products.img} alt="logo-icon" />
-            <p className="menu-description">
+          <section className='container-product' onClick={() => pickingOrder(products)} >
+            <img className='menu-img' src={products.img} alt='logo-icon' />
+            <p className='menu-description'>
               {products.item} <br /> $ {products.price}
             </p>
           </section>
         ))}
         
         </div>
-        <div className="container-new-order">
-          <NewOrder className="orderForm"
+        <div className='container-new-order'>
+          <NewOrder className='orderForm'
           product={listOrder}
           deleteItem={deleteItem}
           productstoSend={productstoSend}

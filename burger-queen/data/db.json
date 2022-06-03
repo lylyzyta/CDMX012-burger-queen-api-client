@@ -1,372 +1,372 @@
 {
-  "products": [
+  'products': [
     {
-      "id": 1,
-      "item": "Scrambled eggs",
-      "price": 110,
-      "img": "https://i.pinimg.com/474x/33/09/c6/3309c6375adba1f8a3002cc1e64fb889.jpg",
-      "type": "breakfast",
-      "dateEntry": "05/16/2022"
+      'id': 1,
+      'item': 'Scrambled eggs',
+      'price': 110,
+      'img': 'https://i.pinimg.com/474x/33/09/c6/3309c6375adba1f8a3002cc1e64fb889.jpg',
+      'type': 'breakfast',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 2,
-      "item": "Taquitos",
-      "price": 130,
-      "img": "https://i.pinimg.com/474x/28/82/ba/2882bacbff77a11889988cdd9c9f67e9.jpg",
-      "type": "breakfast",
-      "dateEntry": "05/16/2022"
+      'id': 2,
+      'item': 'Taquitos',
+      'price': 130,
+      'img': 'https://i.pinimg.com/474x/28/82/ba/2882bacbff77a11889988cdd9c9f67e9.jpg',
+      'type': 'breakfast',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 3,
-      "item": "Cheese Bread",
-      "price": 150,
-      "img": "https://i.pinimg.com/474x/d8/c4/65/d8c46505d5d4ec22eb1cdf03d769f562.jpg",
-      "type": "breakfast",
-      "dateEntry": "05/16/2022"
+      'id': 3,
+      'item': 'Cheese Bread',
+      'price': 150,
+      'img': 'https://i.pinimg.com/474x/d8/c4/65/d8c46505d5d4ec22eb1cdf03d769f562.jpg',
+      'type': 'breakfast',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 4,
-      "item": "Bacon eggs",
-      "price": 110,
-      "img": "https://i.pinimg.com/564x/4c/e1/66/4ce16641c30907aeb7dd3e5ef800c0b3.jpg",
-      "type": "breakfast",
-      "dateEntry": "05/16/2022"
+      'id': 4,
+      'item': 'Bacon eggs',
+      'price': 110,
+      'img': 'https://i.pinimg.com/564x/4c/e1/66/4ce16641c30907aeb7dd3e5ef800c0b3.jpg',
+      'type': 'breakfast',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 5,
-      "item": "Turkish eggs",
-      "price": 130,
-      "img": "https://i.pinimg.com/474x/28/d4/22/28d422800cf89bcc04c00fda959ba90c.jpg",
-      "type": "breakfast",
-      "dateEntry": "05/16/2022"
+      'id': 5,
+      'item': 'Turkish eggs',
+      'price': 130,
+      'img': 'https://i.pinimg.com/474x/28/d4/22/28d422800cf89bcc04c00fda959ba90c.jpg',
+      'type': 'breakfast',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 6,
-      "item": "Mediterranean",
-      "price": 150,
-      "img": "https://i.pinimg.com/474x/2b/67/2e/2b672e55e5f524a1282c2b5b0f1be3ff.jpg",
-      "type": "breakfast",
-      "dateEntry": "05/16/2022"
+      'id': 6,
+      'item': 'Mediterranean',
+      'price': 150,
+      'img': 'https://i.pinimg.com/474x/2b/67/2e/2b672e55e5f524a1282c2b5b0f1be3ff.jpg',
+      'type': 'breakfast',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 7,
-      "item": "Blueberry Ricota",
-      "price": 110,
-      "img": "https://i.pinimg.com/474x/6c/bd/dd/6cbddd4edb2a2721f9eb83881dcfa37b.jpg",
-      "type": "breakfast",
-      "dateEntry": "05/16/2022"
+      'id': 7,
+      'item': 'Blueberry Ricota',
+      'price': 110,
+      'img': 'https://i.pinimg.com/474x/6c/bd/dd/6cbddd4edb2a2721f9eb83881dcfa37b.jpg',
+      'type': 'breakfast',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 8,
-      "item": "Croisant",
-      "price": 130,
-      "img": "https://i.pinimg.com/474x/bc/d2/17/bcd217e41c4db11b05856c5be9444620.jpg",
-      "type": "breakfast",
-      "dateEntry": "05/16/2022"
+      'id': 8,
+      'item': 'Croisant',
+      'price': 130,
+      'img': 'https://i.pinimg.com/474x/bc/d2/17/bcd217e41c4db11b05856c5be9444620.jpg',
+      'type': 'breakfast',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 9,
-      "item": "Avocaido eggs",
-      "price": 150,
-      "img": "https://i.pinimg.com/474x/3f/7f/79/3f7f79b81a89d3bd72f03ae1d90e4044.jpg",
-      "type": "breakfast",
-      "dateEntry": "05/16/2022"
+      'id': 9,
+      'item': 'Avocaido eggs',
+      'price': 150,
+      'img': 'https://i.pinimg.com/474x/3f/7f/79/3f7f79b81a89d3bd72f03ae1d90e4044.jpg',
+      'type': 'breakfast',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 10,
-      "item": "Cheesy Veggie",
-      "price": 150,
-      "img": "https://i.pinimg.com/474x/c2/17/c9/c217c99cc536601036005772295b327e.jpg",
-      "type": "burgers",
-      "dateEntry": "05/16/2022"
+      'id': 10,
+      'item': 'Cheesy Veggie',
+      'price': 150,
+      'img': 'https://i.pinimg.com/474x/c2/17/c9/c217c99cc536601036005772295b327e.jpg',
+      'type': 'burgers',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 11,
-      "item": "Jumbo Jumbo",
-      "price": 200,
-      "img": "https://i.pinimg.com/474x/9a/5d/55/9a5d55e2a870afd4f2faef735b555761.jpg",
-      "type": "burgers",
-      "dateEntry": "05/16/2022"
+      'id': 11,
+      'item': 'Jumbo Jumbo',
+      'price': 200,
+      'img': 'https://i.pinimg.com/474x/9a/5d/55/9a5d55e2a870afd4f2faef735b555761.jpg',
+      'type': 'burgers',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 12,
-      "item": "Crispy Chicken",
-      "price": 120,
-      "img": "https://i.pinimg.com/474x/dd/d0/62/ddd0627c9bf28df20751fae152654597.jpg",
-      "type": "burgers",
-      "dateEntry": "05/16/2022"
+      'id': 12,
+      'item': 'Crispy Chicken',
+      'price': 120,
+      'img': 'https://i.pinimg.com/474x/dd/d0/62/ddd0627c9bf28df20751fae152654597.jpg',
+      'type': 'burgers',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 13,
-      "item": "New York Pastrami",
-      "price": 150,
-      "img": "https://i.pinimg.com/474x/90/32/f8/9032f8f546a7e42f20425cb1f5e47fd7.jpg",
-      "type": "burgers",
-      "dateEntry": "05/16/2022"
+      'id': 13,
+      'item': 'New York Pastrami',
+      'price': 150,
+      'img': 'https://i.pinimg.com/474x/90/32/f8/9032f8f546a7e42f20425cb1f5e47fd7.jpg',
+      'type': 'burgers',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 14,
-      "item": "Bacon Jumbo Jumbo",
-      "price": 200,
-      "img": "https://i.pinimg.com/736x/4d/5d/98/4d5d981b39836c44755b4f9414ab8de1.jpg",
-      "type": "burgers",
-      "dateEntry": "05/16/2022"
+      'id': 14,
+      'item': 'Bacon Jumbo Jumbo',
+      'price': 200,
+      'img': 'https://i.pinimg.com/736x/4d/5d/98/4d5d981b39836c44755b4f9414ab8de1.jpg',
+      'type': 'burgers',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 15,
-      "item": "Original",
-      "price": 120,
-      "img": "https://i.pinimg.com/474x/fd/da/aa/fddaaa50015f37336f0d53170a3d2983.jpg",
-      "type": "burgers",
-      "dateEntry": "05/16/2022"
+      'id': 15,
+      'item': 'Original',
+      'price': 120,
+      'img': 'https://i.pinimg.com/474x/fd/da/aa/fddaaa50015f37336f0d53170a3d2983.jpg',
+      'type': 'burgers',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 16,
-      "item": "Crispy Quinoa",
-      "price": 150,
-      "img": "https://i.pinimg.com/474x/7b/75/e4/7b75e4c70f3a57c2c980defe863a1e02.jpg",
-      "type": "burgers",
-      "dateEntry": "05/16/2022"
+      'id': 16,
+      'item': 'Crispy Quinoa',
+      'price': 150,
+      'img': 'https://i.pinimg.com/474x/7b/75/e4/7b75e4c70f3a57c2c980defe863a1e02.jpg',
+      'type': 'burgers',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 17,
-      "item": "Double Cheese",
-      "price": 200,
-      "img": "https://i.pinimg.com/474x/1e/65/4f/1e654fac595d426d7ffffccd754b5977.jpg",
-      "type": "burgers",
-      "dateEntry": "05/16/2022"
+      'id': 17,
+      'item': 'Double Cheese',
+      'price': 200,
+      'img': 'https://i.pinimg.com/474x/1e/65/4f/1e654fac595d426d7ffffccd754b5977.jpg',
+      'type': 'burgers',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 18,
-      "item": "Miso Fish",
-      "price": 120,
-      "img": "https://i.pinimg.com/474x/3d/d0/ec/3dd0ec371308e0fd97ddd8d401f58f1f.jpg",
-      "type": "burgers",
-      "dateEntry": "05/16/2022"
+      'id': 18,
+      'item': 'Miso Fish',
+      'price': 120,
+      'img': 'https://i.pinimg.com/474x/3d/d0/ec/3dd0ec371308e0fd97ddd8d401f58f1f.jpg',
+      'type': 'burgers',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 19,
-      "item": "Brownille",
-      "price": 130,
-      "img": "https://i.pinimg.com/474x/71/6c/8c/716c8c92a85a8313ce36fe1eb1364125.jpg",
-      "type": "dessert",
-      "dateEntry": "05/16/2022"
+      'id': 19,
+      'item': 'Brownille',
+      'price': 130,
+      'img': 'https://i.pinimg.com/474x/71/6c/8c/716c8c92a85a8313ce36fe1eb1364125.jpg',
+      'type': 'dessert',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 20,
-      "item": "Minipies",
-      "price": 135,
-      "img": "https://i.pinimg.com/474x/50/bc/2a/50bc2acee97fe95a5b73778953851b22.jpg",
-      "type": "dessert",
-      "dateEntry": "05/16/2022"
+      'id': 20,
+      'item': 'Minipies',
+      'price': 135,
+      'img': 'https://i.pinimg.com/474x/50/bc/2a/50bc2acee97fe95a5b73778953851b22.jpg',
+      'type': 'dessert',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 21,
-      "item": "Strawberry tarts",
-      "price": 130,
-      "img": "https://i.pinimg.com/474x/b6/ae/dd/b6aedd344b27d7e4d73a0fbcfc5ef777.jpg",
-      "type": "dessert",
-      "dateEntry": "05/16/2022"
+      'id': 21,
+      'item': 'Strawberry tarts',
+      'price': 130,
+      'img': 'https://i.pinimg.com/474x/b6/ae/dd/b6aedd344b27d7e4d73a0fbcfc5ef777.jpg',
+      'type': 'dessert',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 22,
-      "item": "Brownies",
-      "price": 130,
-      "img": "https://i.pinimg.com/474x/2d/26/09/2d26090fbb532a89d74a0a9a14e4e217.jpg",
-      "type": "dessert",
-      "dateEntry": "05/16/2022"
+      'id': 22,
+      'item': 'Brownies',
+      'price': 130,
+      'img': 'https://i.pinimg.com/474x/2d/26/09/2d26090fbb532a89d74a0a9a14e4e217.jpg',
+      'type': 'dessert',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 23,
-      "item": "Pana-Cotta Tarte",
-      "price": 135,
-      "img": "https://i.pinimg.com/474x/59/67/a4/5967a47dacf1269ed7305908048bb2e7.jpg",
-      "type": "dessert",
-      "dateEntry": "05/16/2022"
+      'id': 23,
+      'item': 'Pana-Cotta Tarte',
+      'price': 135,
+      'img': 'https://i.pinimg.com/474x/59/67/a4/5967a47dacf1269ed7305908048bb2e7.jpg',
+      'type': 'dessert',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 24,
-      "item": "Waffle Cake",
-      "price": 130,
-      "img": "https://i.pinimg.com/474x/9b/f2/c0/9bf2c0eae63c7345a15541b577f25000.jpg",
-      "type": "dessert",
-      "dateEntry": "05/16/2022"
+      'id': 24,
+      'item': 'Waffle Cake',
+      'price': 130,
+      'img': 'https://i.pinimg.com/474x/9b/f2/c0/9bf2c0eae63c7345a15541b577f25000.jpg',
+      'type': 'dessert',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 25,
-      "item": "Solero Yogurth",
-      "price": 130,
-      "img": "https://i.pinimg.com/474x/20/11/02/201102ebbaa3f8e4d6f422d58590f638.jpg",
-      "type": "dessert",
-      "dateEntry": "05/16/2022"
+      'id': 25,
+      'item': 'Solero Yogurth',
+      'price': 130,
+      'img': 'https://i.pinimg.com/474x/20/11/02/201102ebbaa3f8e4d6f422d58590f638.jpg',
+      'type': 'dessert',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 26,
-      "item": "Mini Cheesecake",
-      "price": 135,
-      "img": "https://i.pinimg.com/474x/d0/32/49/d03249d3db73b7d57fb598cbc9ec0d86.jpg",
-      "type": "dessert",
-      "dateEntry": "05/16/2022"
+      'id': 26,
+      'item': 'Mini Cheesecake',
+      'price': 135,
+      'img': 'https://i.pinimg.com/474x/d0/32/49/d03249d3db73b7d57fb598cbc9ec0d86.jpg',
+      'type': 'dessert',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 27,
-      "item": "Marzipan Mousse",
-      "price": 130,
-      "img": "https://i.pinimg.com/474x/d2/e1/ef/d2e1ef6898ca9dd5938d37d9898b62de.jpg",
-      "type": "dessert",
-      "dateEntry": "05/16/2022"
+      'id': 27,
+      'item': 'Marzipan Mousse',
+      'price': 130,
+      'img': 'https://i.pinimg.com/474x/d2/e1/ef/d2e1ef6898ca9dd5938d37d9898b62de.jpg',
+      'type': 'dessert',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 28,
-      "item": "Orange Refresher",
-      "price": 130,
-      "img": "https://i.pinimg.com/474x/2f/2f/d7/2f2fd74b66687e177c773719607c740a.jpg",
-      "type": "beverage",
-      "dateEntry": "05/16/2022"
+      'id': 28,
+      'item': 'Orange Refresher',
+      'price': 130,
+      'img': 'https://i.pinimg.com/474x/2f/2f/d7/2f2fd74b66687e177c773719607c740a.jpg',
+      'type': 'beverage',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 29,
-      "item": "Green Tea",
-      "price": 130,
-      "img": "https://i.pinimg.com/474x/30/ce/2f/30ce2f90bf2ead409d7ed61445f1385c.jpg",
-      "type": "beverage",
-      "dateEntry": "05/16/2022"
+      'id': 29,
+      'item': 'Green Tea',
+      'price': 130,
+      'img': 'https://i.pinimg.com/474x/30/ce/2f/30ce2f90bf2ead409d7ed61445f1385c.jpg',
+      'type': 'beverage',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 30,
-      "item": "Blueberry Lemonade",
-      "price": 130,
-      "img": "https://i.pinimg.com/474x/8a/0a/ec/8a0aecd913fde3f65b4b5308663d6804.jpg",
-      "type": "beverage",
-      "dateEntry": "05/16/2022"
+      'id': 30,
+      'item': 'Blueberry Lemonade',
+      'price': 130,
+      'img': 'https://i.pinimg.com/474x/8a/0a/ec/8a0aecd913fde3f65b4b5308663d6804.jpg',
+      'type': 'beverage',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 31,
-      "item": "Peach Smoothie",
-      "price": 130,
-      "img": "https://i.pinimg.com/474x/be/38/63/be38635f51d12656066bdc1c59db1092.jpg",
-      "type": "beverage",
-      "dateEntry": "05/16/2022"
+      'id': 31,
+      'item': 'Peach Smoothie',
+      'price': 130,
+      'img': 'https://i.pinimg.com/474x/be/38/63/be38635f51d12656066bdc1c59db1092.jpg',
+      'type': 'beverage',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 32,
-      "item": "Mango Lemonade",
-      "price": 130,
-      "img": "https://i.pinimg.com/474x/d4/6e/87/d46e87cb8d9e384cf2038f185d4fb47a.jpg",
-      "type": "beverage",
-      "dateEntry": "05/16/2022"
+      'id': 32,
+      'item': 'Mango Lemonade',
+      'price': 130,
+      'img': 'https://i.pinimg.com/474x/d4/6e/87/d46e87cb8d9e384cf2038f185d4fb47a.jpg',
+      'type': 'beverage',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 33,
-      "item": "Chocolate Milkshake",
-      "price": 130,
-      "img": "https://i.pinimg.com/474x/65/18/58/65185813a04d1cfc911fa92644ec0de7.jpg",
-      "type": "beverage",
-      "dateEntry": "05/16/2022"
+      'id': 33,
+      'item': 'Chocolate Milkshake',
+      'price': 130,
+      'img': 'https://i.pinimg.com/474x/65/18/58/65185813a04d1cfc911fa92644ec0de7.jpg',
+      'type': 'beverage',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 34,
-      "item": "Pineapple Smoothie",
-      "price": 130,
-      "img": "https://i.pinimg.com/originals/1f/ec/7d/1fec7da054c1004fb7ca584bee9ed29e.jpg",
-      "type": "beverage",
-      "dateEntry": "05/16/2022"
+      'id': 34,
+      'item': 'Pineapple Smoothie',
+      'price': 130,
+      'img': 'https://i.pinimg.com/originals/1f/ec/7d/1fec7da054c1004fb7ca584bee9ed29e.jpg',
+      'type': 'beverage',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 35,
-      "item": "Green Kiwi Smoothie",
-      "price": 130,
-      "img": "https://i.pinimg.com/474x/3f/65/d2/3f65d2a6c4271972781f0184f15043c0.jpg",
-      "type": "beverage",
-      "dateEntry": "05/16/2022"
+      'id': 35,
+      'item': 'Green Kiwi Smoothie',
+      'price': 130,
+      'img': 'https://i.pinimg.com/474x/3f/65/d2/3f65d2a6c4271972781f0184f15043c0.jpg',
+      'type': 'beverage',
+      'dateEntry': '05/16/2022'
     },
     {
-      "id": 36,
-      "item": "Rasberry Smoothie",
-      "price": 130,
-      "img": "https://i.pinimg.com/474x/4a/22/ac/4a22ac2e2ed27737d5a89c194a581d70.jpg",
-      "type": "beverage",
-      "dateEntry": "05/16/2022"
+      'id': 36,
+      'item': 'Rasberry Smoothie',
+      'price': 130,
+      'img': 'https://i.pinimg.com/474x/4a/22/ac/4a22ac2e2ed27737d5a89c194a581d70.jpg',
+      'type': 'beverage',
+      'dateEntry': '05/16/2022'
     }
   ],
-  "user": [
+  'user': [
     {
-      "id": 1,
-      "userId": "1",
-      "name": "Lorena",
-      "email": "wait_lorena@gmail.com",
-      "password": "123xmi",
-      "roles": "Waiter"
+      'id': 1,
+      'userId': '1',
+      'name': 'Lorena',
+      'email': 'wait_lorena@gmail.com',
+      'password': '123xmi',
+      'roles': 'Waiter'
     },
     {
-      "id": 2,
-      "userId": "2",
-      "name": "Niza",
-      "email": "admi_niza@gmail.com",
-      "password": "123xmi",
-      "roles": "Admin"
+      'id': 2,
+      'userId': '2',
+      'name': 'Niza',
+      'email': 'admi_niza@gmail.com',
+      'password': '123xmi',
+      'roles': 'Admin'
     },
     {
-      "id": 3,
-      "userId": "3",
-      "name": "Lili",
-      "email": "cook_lili@gmail.com",
-      "password": "123xmi",
-      "roles": "Kitchen"
+      'id': 3,
+      'userId': '3',
+      'name': 'Lili',
+      'email': 'cook_lili@gmail.com',
+      'password': '123xmi',
+      'roles': 'Kitchen'
     }
   ],
-  "orders": [
+  'orders': [
     {
-      "id": 11,
-      "userId": "3",
-      "client": "Table 5",
-      "status": "pending",
-      "dateEntry": "23/05/2023",
-      "dateProcessed": "23/05/2023",
-      "products": [
+      'id': 11,
+      'userId': '3',
+      'client': 'Table 5',
+      'status': 'pending',
+      'dateEntry': '23/05/2023',
+      'dateProcessed': '23/05/2023',
+      'products': [
         {
-          "quantity": "1",
-          "product": "hamburgers"
+          'quantity': '1',
+          'product': 'hamburgers'
         },
         {
-          "quantity": "1",
-          "product": "hamburgers"
+          'quantity': '1',
+          'product': 'hamburgers'
         }
       ]
     },
     {
-      "id": 1,
-      "userId": "3",
-      "client": "Table 5",
-      "status": "pending",
-      "dateEntry": "23/05/2023",
-      "dateProcessed": "23/05/2023",
-      "products": [
+      'id': 1,
+      'userId': '3',
+      'client': 'Table 5',
+      'status': 'pending',
+      'dateEntry': '23/05/2023',
+      'dateProcessed': '23/05/2023',
+      'products': [
         {
-          "quantity": "1",
-          "product": "hamburgers"
+          'quantity': '1',
+          'product': 'hamburgers'
         },
         {
-          "quantity": "1",
-          "product": "hamburgers"
+          'quantity': '1',
+          'product': 'hamburgers'
         }
       ]
     },
     {
-      "id": 2,
-      "userId": "3",
-      "client": "Table 5",
-      "status": "pending",
-      "dateEntry": "23/05/2023",
-      "dateProcessed": "23/05/2023",
-      "products": [
+      'id': 2,
+      'userId': '3',
+      'client': 'Table 5',
+      'status': 'pending',
+      'dateEntry': '23/05/2023',
+      'dateProcessed': '23/05/2023',
+      'products': [
         {
-          "quantity": "1",
-          "product": "hamburgers"
+          'quantity': '1',
+          'product': 'hamburgers'
         },
         {
-          "quantity": "1",
-          "product": "hamburgers"
+          'quantity': '1',
+          'product': 'hamburgers'
         }
       ]
     }

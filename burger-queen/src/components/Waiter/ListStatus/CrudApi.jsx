@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { helpHttp } from "../../../helpers/helpHttp";
-import CrudForm from "./CrudForm";
-import CrudTable from "./OrderStatus/CrudTable";
-import Loader from "./Loader";
-import Message from "./Message";
+import React, { useEffect, useState } from 'react';
+import { helpHttp } from '../../../helpers/helpHttp';
+import CrudForm from './CrudForm';
+import CrudTable from './OrderStatus/CrudTable';
+import Loader from './Loader';
+import Message from './Message';
 import style from '../ListStatus/CrudApi.module.css';
 
 const CrudApi = () => {
@@ -14,7 +14,7 @@ const CrudApi = () => {
   const [loading, setLoading] = useState(false);
 
   let api = helpHttp();
-  let url = "https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/orders";
+  let url = 'https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/orders';
 
   useEffect(() => {
     setLoading(true);
@@ -40,7 +40,7 @@ const CrudApi = () => {
 
     let options = {
       body: data,
-      headers: { "content-type": "application/json" },
+      headers: { 'content-type': 'application/json' },
     };
 
     api.post(url, options).then((res) => {
@@ -59,7 +59,7 @@ const CrudApi = () => {
 
     let options = {
       body: data,
-      headers: { "content-type": "application/json" },
+      headers: { 'content-type': 'application/json' },
     };
 
     api.put(endpoint, options).then((res) => {
@@ -81,7 +81,7 @@ const CrudApi = () => {
     if (isDelete) {
       let endpoint = `${url}/${id}`;
       let options = {
-        headers: { "content-type": "application/json" },
+        headers: { 'content-type': 'application/json' },
       };
 
       api.del(endpoint, options).then((res) => {
@@ -104,7 +104,7 @@ const CrudApi = () => {
         {error && (
           <Message
             msg={`Error ${error.status}: ${error.statusText}`}
-            bgColor="#dc3545"
+            bgColor='#dc3545'
           />
         )}
         {db && (

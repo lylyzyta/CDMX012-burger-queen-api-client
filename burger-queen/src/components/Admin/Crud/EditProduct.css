@@ -1,0 +1,17 @@
+.editForm{
+    display: flex;
+    flex-direction: column;
+    width: 15em;
+    height: 2em;
+    z-index: 3;
+    opacity:0.9;
+    background-color:white;
+}
+.editSection{
+    height: 2em;
+    width: 15em;
+    color: black;
+}
+.userId{
+    color: white;
+}
