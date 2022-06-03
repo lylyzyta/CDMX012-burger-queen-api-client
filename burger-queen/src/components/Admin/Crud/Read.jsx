@@ -1,4 +1,5 @@
 import './../Admin.css';
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../../lib/firebaseConfig';
 import { logout } from '../../../lib/firebaseAuth';
@@ -8,6 +9,18 @@ import { useState, useEffect } from 'react';
 import CreateNewUser from './CreateNewUser';
 import CreateNewProduct from './CreateNewProduct';
 import EditProduct from './EditProduct';
+=======
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../../lib/firebaseConfig";
+import { logout } from "../../../lib/firebaseAuth";
+import editIcon from "../../../img/OrderStatus/editOrder.svg";
+import deleteIcon from "../../../img/OrderStatus/deleteOrder.svg";
+import { useState, useEffect } from "react";
+import CreateNewUser from "./CreateNewUser";
+import CreateNewProduct from "./CreateNewProduct";
+import UpdateUser from "./UpdateUser";
+import UpdateProduct from './UpdateProduct';
+>>>>>>> 603f4fc43ea431ec00167f5109e6da2696e7b51f
 
 export default function Read(prop) {
   let url = '';
@@ -18,25 +31,26 @@ export default function Read(prop) {
   } else {
     url = 'https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/products';
   }
-
   const navigate = useNavigate();
-
   const handleClick = async () => {
     await logout(auth);
     navigate('/');
   };
-
   const [renderOptions, setRenderOptions] = useState(true);
-
+  const [renderForm, setRenderForm] = useState(true);
+  const [sendUser, setSendUser] = useState();
+  const [sendProducts, setSendProducts] = useState();
   const [listitem, setListItem] = useState([]);
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 603f4fc43ea431ec00167f5109e6da2696e7b51f
   async function getResponse(url) {
     const response = await fetch(url);
     return await response.json();
   }
-
   useEffect(() => {
     getResponse(url).then((json) => setListItem(json));
   }, [url]);
@@ -47,8 +61,13 @@ export default function Read(prop) {
     );
     if (isDelete) {
       const requestOptions = {
+<<<<<<< HEAD
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
+=======
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+>>>>>>> 603f4fc43ea431ec00167f5109e6da2696e7b51f
       };
       fetch(
         `https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/user/${users.id}`,
@@ -69,8 +88,8 @@ export default function Read(prop) {
     );
     if (isDelete) {
       const requestOptions = {
-        method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' },
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
       };
       fetch(
         `https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/products/${products.id}`,
@@ -78,133 +97,134 @@ export default function Read(prop) {
       )
         .then((response) => response.json())
         .then((data) => console.log(data.name));
+      let newTable = listitem.filter((db) => db.item !== products.item);
+      setListItem(newTable);
     } else {
       return;
     }
   }
-  const [edit, setEdit] = useState(false)
-
-
-  return (
-    <div>
-      {' '}
-      {renderOptions ? (
-        url === 'https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/user' ? (
-          <section className='container-show-control-panel'>
-            <h3 className='titles-control-panel'>Users List</h3>
-            <button
-              type='button'
-              className='btn-add-item'
-              value='adduser'
-              onClick={() => setRenderOptions(false)}
-            >
-              Add New User
-            </button>
-            <table className='data-control-panel' >
-              <thead>
-                <tr>
-                  <th className='column-control-panel'>Name</th>
-                  <th className='column-control-panel'>Email</th>
-                  <th className='column-control-panel'>Password</th>
-                  <th className='column-control-panel'>Rol</th>
-                  <th className='column-control-panel'>Edit</th>
-                  <th className='column-control-panel'>Delete</th>
-                </tr>
-              </thead>
-
-              {listitem.map((users) => (
-                <tr>
-                  <td className='row-control-panel'>{users.name}</td>
-                  <td className='row-control-panel'>{users.email}</td>
-                  <td className='row-control-panel'>{users.password}</td>
-                  <td className='row-control-panel'>{users.rol}</td>
-                  <td className='row-control-panel'>
-                    <img
-                      className='icon-edit'
-                      src={editIcon}
-                      alt='edit-icon'
-                      onClick={() => EditProduct(users)}
-                    />
-                  </td>
-                  <td className='row-control-panel'>
-                    <img
-                      className='icon-delete'
-                      src={deleteIcon}
-                      alt='delete-icon'
-                      value={users.id}
-                      onClick={() => deleteUsers(users)}
-                    />
-                  </td>
-                </tr>
-              ))}
-            </table>
-            
-              <EditProduct />
-
-          </section>
-        ) : (
-          <section className='container-show-control-panel'>
-            <h3 className='titles-control-panel'>Product List</h3>
-            <button
-              type='button'
-              className='btn-add-item'
-              value='addproduct'
-              onClick={() => setRenderOptions(false)}
-            >
-              Add New Product
-            </button>
-            <table className='data-control-panel'>
-              <thead>
-                <tr>
-                  <th className='column-control-panel'>Id</th>
-                  <th className='column-control-panel'>Product</th>
-                  <th className='column-control-panel' >Price</th>
-                  <th className='column-control-panel' >Image</th>
-                  <th className='column-control-panel'>Type</th>
-                  <th className='column-control-panel' >Edit</th>
-                  <th className='column-control-panel' >Delete</th>
-                </tr>
-              </thead>
-
-              {listitem.map((products) => (
-                <tr>
-                  <td className='row-control-panel'>{products.id}</td>
-                  <td className='row-control-panel'>{products.item}</td>
-                  <td className='row-control-panel'>${products.price}</td>
-                  <td className='row-control-panel'>
-                    <img
-                      className='icon-product'
-                      src={products.img}
-                      alt='-icon'
-                    />
-                  </td>
-                  <td className='row-control-panel'>{products.type}</td>
-                  <td className='row-control-panel'>
-                    <img
-                      className='icon-edit'
-                      src={editIcon}
-                      alt='edit-icon'
-                      onClick={handleClick}
-                    />
-                  </td>
-                  <td className='row-control-panel' >
-                    <img
-                      className='icon-delete'
-                      src={deleteIcon}
-                      alt='delete-icon'
-                      onClick={() => deleteProduct(products)}
-                    />
-                  </td>
-                </tr>
-              ))}
-            </table>
-
-
-          </section>
-        )
-      ) : (
-        <CreateNewUser />
-      )}
-    </div>
-  );
+  const updateUsers = (users) => {
+    setRenderForm(false)
+    setSendUser(users)
+  }
+  const updateProducts = (products) => {
+    setRenderForm(false)
+    setSendProducts(products)
+  }
+  if (prop.option === "user" && renderOptions && renderForm) {
+    return (
+      <section className="container-show-control-panel">
+        <h3 className="titles-control-panel">Users List</h3>
+        <button
+          type="button"
+          className="btn-add-item"
+          value="adduser"
+          onClick={() => setRenderOptions(false)}
+        >
+          Add New User
+        </button>
+        <>
+          <table className="data-control-panel">
+            <thead>
+              <tr>
+                <th className="column-control-panel">Name</th>
+                <th className="column-control-panel">Email</th>
+                <th className="column-control-panel">Password</th>
+                <th className="column-control-panel">Rol</th>
+                <th className="column-control-panel">Edit</th>
+                <th className="column-control-panel">Delete</th>
+              </tr>
+            </thead>
+            {listitem.map((users) => (
+              <tr>
+                <td className="row-control-panel">{users.name}</td>
+                <td className="row-control-panel">{users.email}</td>
+                <td className="row-control-panel">{users.password}</td>
+                <td className="row-control-panel">{users.rol}</td>
+                <td className="row-control-panel">
+                  <img
+                    className="icon-edit"
+                    src={editIcon}
+                    alt="edit-icon"
+                    onClick={() => updateUsers(users)}
+                  />
+                </td>
+                <td className="row-control-panel">
+                  <img
+                    className="icon-delete"
+                    src={deleteIcon}
+                    alt="delete-icon"
+                    value={users.id}
+                    onClick={() => deleteUsers(users)}
+                  />
+                </td>
+              </tr>
+            ))}
+          </table>{" "}
+        </>
+      </section>
+    );
+  } else if (prop.option === "products" && renderOptions && renderForm) {
+    return (
+      <section className="container-show-control-panel">
+        <h3 className="titles-control-panel">Product List</h3>
+        <button
+          type="button"
+          className="btn-add-item"
+          value="addproduct"
+          onClick={() => setRenderOptions(false)}
+        >
+          Add New Product
+        </button>
+        <table className="data-control-panel">
+          <thead>
+            <tr>
+              <th className="column-control-panel">Id</th>
+              <th className="column-control-panel">Product</th>
+              <th className="column-control-panel">Price</th>
+              <th className="column-control-panel">Image</th>
+              <th className="column-control-panel">Type</th>
+              <th className="column-control-panel">Edit</th>
+              <th className="column-control-panel">Delete</th>
+            </tr>
+          </thead>
+          {listitem.map((products) => (
+            <tr>
+              <td className="row-control-panel">{products.id}</td>
+              <td className="row-control-panel">{products.item}</td>
+              <td className="row-control-panel">${products.price}</td>
+              <td className="row-control-panel">
+                <img className="icon-product" src={products.img} alt="-icon" />
+              </td>
+              <td className="row-control-panel">{products.type}</td>
+              <td className="row-control-panel">
+                <img
+                  className="icon-edit"
+                  src={editIcon}
+                  alt="edit-icon"
+                  onClick={() => updateProducts(products)}
+                />
+              </td>
+              <td className="row-control-panel">
+                <img
+                  className="icon-delete"
+                  src={deleteIcon}
+                  alt="delete-icon"
+                  onClick={() => deleteProduct(products)}
+                />
+              </td>
+            </tr>
+          ))}
+        </table>
+      </section>
+    );
+  } else if (prop.option === "user" && !renderOptions && renderForm) {
+    return <CreateNewUser />;
+  } else if (prop.option === "products" && !renderOptions && renderForm) {
+    return <CreateNewProduct />;
+  } else if (prop.option === "user" && !renderForm) {
+    return <UpdateUser users={sendUser} />;
+  } else if (prop.option === "products" && !renderForm) {
+    return <UpdateProduct products={sendProducts} />;
+  } else{return null;}
 }

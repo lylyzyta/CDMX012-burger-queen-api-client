@@ -45,7 +45,7 @@
 
 .column-control-panel{
   color: wheat;
-  border: 5px solid #43537f;
+  border: 10px solid #43537f;
   background-color: #43537fc6;
   width:auto;
   height: 5vmax;
@@ -53,7 +53,7 @@
 .row-control-panel{
   color: wheat;
   background-color: #473125bb;
-  border: 5px solid #43537f;
+  border: 4px solid #43537f;
   width:auto;
   text-align: center;
  }
@@ -65,6 +65,15 @@
   width: 3vmax;
   height: 3vmax;
 }
+.btn-put-item{
+  align-self: flex-end;
+  background-color: beige;
+  height: 40%;
+  color: rgb(138, 120, 138);
+  font-size: 20px;
+ 
+ 
+}
 .btn-add-item {
   align-self: flex-end;
   background-color: #79819D;
@@ -72,6 +81,7 @@
   width: 20%;
   height: 5%;
   margin-left: 55px;
+  border-radius: 10px;
 }
 .btn-add-item-form{
     align-self: flex-end;
@@ -126,9 +136,4 @@
   height: 40%;
   font-size: 20px;
 }
-.input-form-radio {
-  background-color: beige;
-  color: wheat;
-  height: 40%;
-  font-size: 20px;
-}
+

@@ -1,5 +1,6 @@
-import './../Admin.css';
-import { useState } from 'react';
+import "./../Admin.css";
+import { useState } from "react";
+import Read from "./Read";
 
 export default function CreateNewProduct() {
   const [item, setItem] = useState('');
@@ -29,8 +30,8 @@ export default function CreateNewProduct() {
         <form className='create-form'>
           <label className='label-form-text'>Product</label>
           <input
-            className='input-form-text'
-            placeholder='Name'
+            className="input-form-text"
+            placeholder="Item"
             onChange={(e) => setItem(e.target.value)}
           />
 
@@ -62,12 +63,11 @@ export default function CreateNewProduct() {
             onChange={(e) => setDateEntry(e.target.value)}
           />
 
-          <button
-            className='btn-add-item'
-            type='submit'
-            onClick={postDataProducts}
-          >
-            Submit
+          <button className="btn-add-item-form" onClick={postDataProducts}>
+            Add Product
+          </button>
+          <button className="btn-return-item-form" onClick={<Read />}>
+            Return
           </button>
         </form>
       </section>

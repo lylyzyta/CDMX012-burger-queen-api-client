@@ -60,7 +60,7 @@ export default function Menu(prop) {
         </div>
         <div className='container-new-order'>
           <NewOrder className='orderForm'
-          product={listOrder}
+          listOrder={listOrder}
           deleteItem={deleteItem}
           productstoSend={productstoSend}
           setproductstoSend={setproductstoSend}
