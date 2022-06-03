@@ -2,7 +2,7 @@ import "./../Admin.css";
 import { useState } from "react";
 import Read from "./Read";
 
-export default function CreateNewUser() {
+export default function UpdatewUser() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState();
