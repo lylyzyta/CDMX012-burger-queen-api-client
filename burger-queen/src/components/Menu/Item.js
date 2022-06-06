@@ -1,17 +1,20 @@
-import React,{Fragment} from 'react';
+import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
 
-function Item({product}) {
-    console.log(product)
-    return (
-        <div>{product&&
+function Item ({ product }) {
+  Item.propTypes = {
+    product: PropTypes.object
+  }
+  console.log(product)
+  return (
+        <div>{product &&
             <Fragment>
         <h2>{product.item}</h2>
         <strong>{product.price}</strong>
         </Fragment>
             }
-            
         </div>
-    );
+  )
 }
 
-export default Item;
+export default Item

@@ -1,5 +1,5 @@
 import './../Admin.css'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Read from './Read'
 
 export default function UpdateProduct (prop) {

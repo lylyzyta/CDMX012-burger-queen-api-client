@@ -1,26 +1,26 @@
-import "./../Admin.css";
-import { useState } from "react";
-import Read from "./Read";
+import './../Admin.css'
+import React, { useState } from 'react'
+import Read from './Read'
 
-export default function CreateNewProduct() {
-  const [item, setItem] = useState('');
-  const [price, setPrice] = useState('');
-  const [img, setImg] = useState();
-  const [type, setType] = useState();
-  const [dateEntry, setDateEntry] = useState();
+export default function CreateNewProduct () {
+  const [item, setItem] = useState('')
+  const [price, setPrice] = useState('')
+  const [img, setImg] = useState()
+  const [type, setType] = useState()
+  const [dateEntry, setDateEntry] = useState()
 
-  function postDataProducts() {
+  function postDataProducts () {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ item, price, img, type, dateEntry }),
-    };
+      body: JSON.stringify({ item, price, img, type, dateEntry })
+    }
     fetch(
       'https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/products',
       requestOptions
     )
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => console.log(data))
   }
 
   return (
@@ -30,8 +30,8 @@ export default function CreateNewProduct() {
         <form className='create-form'>
           <label className='label-form-text'>Product</label>
           <input
-            className="input-form-text"
-            placeholder="Item"
+            className='input-form-text'
+            placeholder='Item'
             onChange={(e) => setItem(e.target.value)}
           />
 
@@ -63,14 +63,14 @@ export default function CreateNewProduct() {
             onChange={(e) => setDateEntry(e.target.value)}
           />
 
-          <button className="btn-add-item-form" onClick={postDataProducts}>
+          <button className='btn-add-item-form' onClick={postDataProducts}>
             Add Product
           </button>
-          <button className="btn-return-item-form" onClick={<Read />}>
+          <button className='btn-return-item-form' onClick={<Read />}>
             Return
           </button>
         </form>
       </section>
     </section>
-  );
+  )
 }

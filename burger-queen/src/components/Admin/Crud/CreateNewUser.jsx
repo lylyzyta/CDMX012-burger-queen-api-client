@@ -1,25 +1,25 @@
-import './../Admin.css';
-import { useState } from 'react';
-import Read from './Read';
+import './../Admin.css'
+import React, { useState } from 'react'
+import Read from './Read'
 
-export default function UpdatewUser() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState();
-  const [rol, setRol] = useState();
+export default function UpdatewUser () {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState()
+  const [rol, setRol] = useState()
 
-  function postDataUsers() {
+  function postDataUsers () {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, password, rol }),
-    };
+      body: JSON.stringify({ name, email, password, rol })
+    }
     fetch(
       'https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/user',
       requestOptions
     )
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => console.log(data))
   }
 
   return (
@@ -63,8 +63,7 @@ export default function UpdatewUser() {
             Return
           </button>
         </form>
-             
       </section>
     </section>
-  );
+  )
 }

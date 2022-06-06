@@ -1,9 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import './NewOrder.css'
+import PropTypes from 'prop-types'
 
 const NewOrder = ({ listOrder, deleteItem, productstoSend, setproductstoSend, setTotal, total, setListOrder }) => {
+  NewOrder.propTypes = {
+    listOrder: PropTypes.array,
+    deleteItem: PropTypes.func.isRequired,
+    productstoSend: PropTypes.array,
+    setproductstoSend: PropTypes.func.isRequired,
+    setTotal: PropTypes.func.isRequired,
+    total: PropTypes.array,
+    setListOrder: PropTypes.func.isRequired
+  }
   const [table, setTable] = useState(1)
-  
   // Fecha
   const timeAndDate = Date.now()
   const today = new Date(timeAndDate)
@@ -43,7 +52,7 @@ const NewOrder = ({ listOrder, deleteItem, productstoSend, setproductstoSend, se
   const [totalPrices, setTotalPrices] = useState(0)
   useEffect(() => {
     const totalArray = []
-    total.map((each) => {
+    total.forEach(each => {
       totalArray.push(each.sub)
     })
     setTotalPrices(totalArray.reduce((a, b) => a + b, 0))
@@ -111,7 +120,7 @@ const NewOrder = ({ listOrder, deleteItem, productstoSend, setproductstoSend, se
     <div className='orderForm' >
       <p className='plusItems'>Table</p>
       <input type='number' id='table' className='offset' min={1} max={8} defaultValue={1} onChange={changeTable} />
-      {product.map((each) => (
+      {listOrder.map((each) => (
         <tr className='row' key={each.item}>{ }
           <td onClick={() => sum(each)} className='sumButton' >+</td>
           <td className='qty' id={each.id} >1</td>

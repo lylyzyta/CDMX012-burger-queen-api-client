@@ -1,8 +1,8 @@
-import { render, screen } from "@testing-library/react";
-import Waiter from "./Waiter"
+import { render, screen } from '@testing-library/react'
+import Waiter from './Waiter'
 
-test("render buttons", () => {
-    render(<Waiter />);
-    const buttonBreakfast = screen.getAllByText("Breakfast")
-    expect(buttonBreakfast).getByText();
+test('render buttons', () => {
+    render(<Waiter />)
+    const buttonBreakfast = screen.getAllByText('Breakfast')
+    expect(buttonBreakfast).getByText()
 })

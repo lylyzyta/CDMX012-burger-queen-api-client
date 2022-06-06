@@ -1,8 +1,14 @@
-import React from "react";
-import CrudTableRow from "./CrudTableRow";
-import style from '../OrderStatus/CrudTable.module.css';
+import React from 'react'
+import CrudTableRow from './CrudTableRow'
+import style from '../OrderStatus/CrudTable.module.css'
+import PropTypes from 'prop-types'
 
 const CrudTable = ({ data, setEditOrder, deleteData }) => {
+  CrudTable.propTypes = {
+    data: PropTypes.object,
+    setEditOrder: PropTypes.func.isRequired,
+    deleteData: PropTypes.func.isRequired
+  }
 
   return (
     <div className={style.containerOrderStatus}>
@@ -20,24 +26,26 @@ const CrudTable = ({ data, setEditOrder, deleteData }) => {
           </tr>
         </thead>
         <tbody>
-          {data.length > 0 ? (
-            data.map((el) => (
+          {data.length > 0
+            ? (
+                data.map((el) => (
               <CrudTableRow
                 key={el.id}
                 el={el}
                 setEditOrder={setEditOrder}
                 deleteData={deleteData}
               />
-            ))
-          ) : (
+                ))
+              )
+            : (
             <tr>
-              <td colSpan="3">Sin datos</td>
+              <td colSpan='3'>Sin datos</td>
             </tr>
-          )}
+              )}
         </tbody>
       </table>
     </div>
-  );
-};
+  )
+}
 
-export default CrudTable;
+export default CrudTable
