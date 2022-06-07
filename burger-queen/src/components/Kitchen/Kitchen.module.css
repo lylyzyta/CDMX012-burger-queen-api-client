@@ -9,8 +9,8 @@
     font-size: 16px;
   }
   .containerKitchen{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 10% 90%;
     width:100%;
     height: 100%;
     background-image: url(../../img/backgroundkitchen.png);
@@ -18,8 +18,28 @@
     background-position:center;
     background-size: cover;
     }
+   
   .headerKitchen{
-    height: fit-content;
+    display: flex;
+  flex-direction: rows;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  background-color: #ffde593a;
+  }
+
+  .logoAdmin {
+    width: 120px;
+    height: 120px;
+    margin: 45px;
+  }
+
+  .btnLogout {
+    background-color: #B99742;
+    width: 100%;
+    color: wheat;
+    height: 4%;
+    margin-bottom: 100px;
   }
   .boxGeneralKitchen{
     display: flex;

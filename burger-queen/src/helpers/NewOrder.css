@@ -4,38 +4,40 @@
     grid-template-rows:15% 15% 15% 15%;
     width: 100%;
     height: 100%;
-    color: white;
+    color: wheat;
     align-items: flex-start;
     justify-content: flex-start;
-    border: 4px solid transparent;
     background-color: transparent;
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    padding: 5px;
-   }
+    padding: 1px;
+     }
 
 .orderInputs{
     display: grid;
     grid-template-columns:100% ;
     grid-template-rows:50% 50%; 
+  
 }
 
 .offset {
    width: 3em;
    height: 1.5em;
+  background-color: wheat;
+   
    
   }
 .row {
     display: grid;
-    color: white;
+    color: wheat;
     grid-template-columns:5% 5% 10% 40% 15% 15% 15% ;
     
     width: 100%;
     height: 100%;
 }
 .plusItems{
-    color:white;
-    font-size: 1.5em;
+    color:wheat;
+    font-size: 1.3em;
 }
 
 .deleteButton {
@@ -43,7 +45,7 @@
     font-size: 1em;
     font-style: bold ;
     align-items: center;
-    color:white;
+    color:wheat;
     cursor: pointer;
     background-color: transparent;
 }
@@ -51,7 +53,7 @@
 
 .qty {
     font-size: 1.5em;
-    color: white;
+    color: wheat;
     margin-top:5px;
     cursor: pointer; 
     text-align: center;
@@ -62,7 +64,7 @@
     font-size: 1.5em;
     font-style: bold ;
     align-items: center;
-    color:white;
+    color:wheat;
     cursor: pointer;
     background-color: transparent;
 }
@@ -73,7 +75,7 @@
     overflow-y: scroll;
 }
 .subtotal{
-    color: white;
+    color: wheat;
     font-size: 1.5em;
     font-style: bold ;
     align-items: center;
@@ -87,7 +89,7 @@
     font-size: 1.5em;
     font-style: bold ;
     align-items: center;
-    color:white;
+    color:wheat;
     cursor: pointer;
     border: 4px solid #d58841ce;
     border-radius: 20px;

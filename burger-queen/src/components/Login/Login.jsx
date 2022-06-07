@@ -31,6 +31,7 @@ export default function LoginPage () {
         navigate('/Admin')
       } else if (currentmail.includes('cook')) {
         navigate('/Kitchen')
+      // eslint-disable-next-line no-constant-condition
       } else if (currentmail[0] !== 'w' || 'a' || 'c') {
         setError('Error, Please contact the administrator')
       }

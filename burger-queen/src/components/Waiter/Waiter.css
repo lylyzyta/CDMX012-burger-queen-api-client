@@ -1,12 +1,20 @@
 
 .container-waiter{
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 7% 53% 40%;
   width:100%;
   position: fixed;
   background-image: url(../../img/backgroundwaiter.png);
   background-repeat: no-repeat;
   background-size: cover;
+}
+.waiter-logout{
+  display: flex;
+  flex-direction: rows;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(136, 10, 10, 0.137);
 }
 .container-take-orders{
   display: grid;
@@ -23,85 +31,92 @@
 .btn-menu{
   width: 9vmax;
   height: 3vmax;
-  font-size: 1em;
-  color:#F6E7D8;
+  font-size: 1.3em;
+  color:wheat;
   background: rgba(136, 10, 10, 0.418);
   box-shadow: 0px -1px 2px rgba(255, 255, 255, 0.2), 0px 1px 2px rgba(0, 0, 0, 0.2);
   border-radius: 21px;
   border: 0.5px solid #d58841ce;
   }
  .logo-icon-waiter{
-  width: 65px;
-  height: 65px;
+  width: 115px;
+  height: 115px;
+  margin: 20px;
 }
-.logo-icon-waiter-out{
-width: 55px;
-height: 55px;
-position: fixed;
-align-self: flex-end;
+.btn-option-logout {
+  background-color: rgba(54, 30, 30, 0.562);
+  width: 100%;
+  color: wheat;
+  height: 4%;
+  margin-bottom: 100px;
 }
 .container-products{
 display: flex;
 background-color: transparent;
  margin-left: 10px;
+ position: relative;
 }
 .container-menu{
   display: grid;
-  grid-template-columns: 33.3% 33.3% 33.3%;
-  grid-template-rows: 33.3% 33.3% 33.3%;
+  grid-template-columns:30% 30% 30%;
+  grid-template-rows:30% 30% 30%;
   justify-content: space-between;
   justify-items: center;
   border-radius: 30px;
  }
+ .container-menu1{
+   position: absolute;
+ }
+
   .container-product{
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items:center;
-   width: 45%;
-  height: 80%;
+  width: 40%;
+  height: 90%;  
   border: 0.5px solid #d58841ce;
-  background: rgba(238, 147, 11, 0.171);
+  background: #d58841bd;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  padding: 2px;
- }
+
+  }
 .menu-img{
- border-radius: 5px; 
- width: 85px;
- height: 85px;
- padding: 5px;
+ border-radius: 20px; 
+ width: 87%;
+ height: 72%;
+ padding: 1px;
 }
 .menu-description{
   text-align: center;
   color: #F6E7D8;
-  font-size:  0.7vmax;
+  font-size:  0.6vmax;
   font-weight: bolder;
 }
 .container-order{
-  display: flex;
+  display: grid;
+  grid-template-rows: 100%;
+  align-content: flex-end;
   height:100vh;
   background-color: transparent;
-  border: 10px solid #DCAA7B;
   border-radius: 30px;
-  padding: 5px;
-  font-size: 2vmax;
+  font-size: 1.5em;
   text-align: center;
   color:#F6E7D8;
 }
 .container-new-order{
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 10%;
-  width: 100%;
-  height: 65%;
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+  height:63%;
   flex-direction: column;
   flex-wrap: wrap;
-  border: 2px solid #DCAA7B;
+  border: 0.5px solid #DCAA7B;
   background-color: #2b070777;
-  border-radius: 30px;
+  border-radius: 21px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  padding: 15px;
-  font-size: 1vmax;
+  padding: 5px;
+  
+ 
  }
 
 

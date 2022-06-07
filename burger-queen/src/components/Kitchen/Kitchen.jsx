@@ -1,6 +1,7 @@
 import { logout } from '../../lib/firebaseAuth'
 import { auth } from '../../lib/firebaseConfig'
 import { useNavigate } from 'react-router-dom'
+import LogoImage from '../../img/Logo_Image.png'
 import React, { useEffect, useState } from 'react'
 import { helpHttp } from '../../helpers/helpHttp'
 import CrudDashboard from '../Kitchen/ListStatus/OrderDashboard/CrudDashboard'
@@ -41,8 +42,11 @@ export default function KitchenPage () {
 
   return (
         <div className={style.containerKitchen}>
-            <div className={style.headerKitchen}>
-                <h3 className={style.headH3} onClick={handleClick}>Salir</h3>
+         <div className={style.headerKitchen}>
+          <img className={style.logoAdmin} src={LogoImage} alt='logo-icon' />
+        <button className={style.btnLogout} onClick={handleClick}>
+          LogOut
+        </button>
             </div>
             <article className={style.boxGeneralKitchen}>
                 {loading && <Loader />}

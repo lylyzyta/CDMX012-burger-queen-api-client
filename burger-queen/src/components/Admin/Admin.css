@@ -6,7 +6,8 @@
   background-image: url(../../img/backgroundadmin.png);
   background-repeat: no-repeat;
   background-size: cover;
-  
+  scroll-behavior: smooth;
+ 
 }
 .titles-control-panel {
   text-align: center;
@@ -20,7 +21,9 @@
   flex-direction: rows;
   flex-wrap: wrap;
   width: 100%;
+  height: 100%;
   background-color: #43537f82;
+  
 }
 .logo-icon-admin {
   width: 120px;
@@ -29,14 +32,18 @@
 }
 .btn-option-panel {
   background-color: #43537f;
+  width: 100%;
   color: wheat;
   height: 4%;
   margin-bottom: 100px;
+ 
 }
 .container-show-control-panel {
   display: flex;
   flex-direction: column;
-    overflow: scroll;
+  overflow: scroll;
+  scroll-behavior: smooth;
+   
 }
 .data-control-panel{
     width: 94%;
@@ -75,7 +82,7 @@
  
 }
 .btn-add-item {
-  align-self: flex-end;
+  align-self: flex-start;
   background-color: #79819D;
   color: wheat;
   width: 20%;
