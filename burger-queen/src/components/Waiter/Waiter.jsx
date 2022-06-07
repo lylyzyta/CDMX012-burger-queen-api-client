@@ -1,7 +1,6 @@
 
 import './Waiter.css'
 import LogoImage from '../../img/Logo_Image.png'
-import LogoLogout from '../../img/Logo_out.png'
 import { logout } from '../../lib/firebaseAuth'
 import { auth } from '../../lib/firebaseConfig'
 import React, { useState } from 'react'
@@ -10,12 +9,26 @@ import Menu from '../../helpers/Menu'
 import CrudApi from '../Waiter/ListStatus/CrudApi'
 
 export default function WaiterPage () {
+  const navigate = useNavigate()
   const [filterMenu, setFilterMenu] = useState()
+  const handleClick = async () => {
+    await logout(auth)
+    navigate('/')
+  }
 
   return (
     <div className='container-waiter'>
+          <div className='waiter-logout'>
+          <img className='logo-icon-waiter' src={LogoImage} alt='logo-icon' />
+        <button className='btn-option-logout' onClick={handleClick}>
+          LogOut
+        </button>
+        </div>
+      {/* <div className='waiter-logout'>
+        <img className= 'logo-icon-waiter' src={LogoImage} onClick={handleClick}/>
+          </div> */}
       <section className='container-take-orders'>
-        <div className='option-menu'>
+          <div className='option-menu'>
           <button className='btn-menu' value='breakfast' onClick={(e) => setFilterMenu(e.target.value)}>
           {' '}
           Breakfast

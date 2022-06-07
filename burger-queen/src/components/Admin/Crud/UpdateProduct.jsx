@@ -33,10 +33,10 @@ export default function UpdateProduct (prop) {
 
   return (
     <section className='container-show-control-panel'>
-      <h3 className='titles-control-panel'>Edit User</h3>
+      <h3 className='titles-control-panel'>Edit Product</h3>
       <section className='container-form-new-item'>
         <form className='create-form'>
-          <label className='label-form-text'>Name</label>
+          <label className='label-form-text'>Product</label>
           <input
             className='input-form-text'
             defaultValue={prop.products.item}
@@ -44,7 +44,7 @@ export default function UpdateProduct (prop) {
             id={'item'}
           />
 
-          <label className='label-form-text'>Email</label>
+          <label className='label-form-text'>Price</label>
           <input
             className='input-form-text'
             defaultValue={prop.products.price}
@@ -52,7 +52,7 @@ export default function UpdateProduct (prop) {
             id={'price'}
           />
 
-          <label className='label-form-text'>Password</label>
+          <label className='label-form-text'>Img</label>
           <input
             className='input-form-text'
             defaultValue={prop.products.img}
@@ -60,14 +60,14 @@ export default function UpdateProduct (prop) {
             id={'img'}
           />
 
-          <label className='label-form-text'>Rol</label>
+          <label className='label-form-text'>Type</label>
           <input
             className='input-form-text'
             defaultValue={prop.products.type}
             onChange={(e) => setType(e.target.value)}
             id={'type'}
           />
-          <label className='label-form-text'>Rol</label>
+          <label className='label-form-text'>DateEntry</label>
           <input
             className='input-form-text'
             defaultValue={prop.products.dateEntry}

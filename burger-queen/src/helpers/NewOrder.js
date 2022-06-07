@@ -118,8 +118,21 @@ const NewOrder = ({ listOrder, deleteItem, productstoSend, setproductstoSend, se
 
   return (
     <div className='orderForm' >
+        <div className='total'>
+        <button type='button' className='downButton' onClick={() => sendToKitchen()}>Kitchen</button>
+         <button type='button' id='cancelOrder' className='downButton' onClick={() => {
+           setListOrder([])
+           setproductstoSend([])
+           setTotal([])
+           setTable(1)
+         }
+        }>
+          Cancel Order
+        </button>
+      </div>
       <p className='plusItems'>Table</p>
       <input type='number' id='table' className='offset' min={1} max={8} defaultValue={1} onChange={changeTable} />
+      <p className='plusItems' >  TOTAL $ {totalPrices}</p>
       {listOrder.map((each) => (
         <tr className='row' key={each.item}>{ }
           <td onClick={() => sum(each)} className='sumButton' >+</td>
@@ -131,19 +144,7 @@ const NewOrder = ({ listOrder, deleteItem, productstoSend, setproductstoSend, se
           <td className='deleteButton' onClick={() => deleteItem(each)} >Clear</td>
         </tr>
       ))}
-      <div className='total'>
-        <button type='button' className='downButton' onClick={() => sendToKitchen()}>Kitchen</button>
-        <p className='plusItems' >  TOTAL $ {totalPrices}</p>
-        <button type='button' id='cancelOrder' className='downButton' onClick={() => {
-          setListOrder([])
-          setproductstoSend([])
-          setTotal([])
-          setTable(1)
-        }
-        }>
-          Cancel Order
-        </button>
-      </div>
+
     </div>
   )
 }

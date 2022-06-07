@@ -1,8 +1,7 @@
 .containerFormStatus{
   width: 100%;
   height: 100%;
-  border: 10px solid #d58941;
-  background-color: #2b070776;
+  border: 0.5px solid #d58941;
   overflow: scroll;
   scroll-behavior: smooth;
   border-radius: 20px;
@@ -55,15 +54,15 @@
     height: auto;
   }
   .titleTable {
-      font-size: 2em;
+      font-size: 1.5em;
       height: auto;
       margin: 10px 5px;
-      color: white;
+      color: wheat;
       text-align: center;
   }
 .titleForm{
   background: rgb(149, 3, 3);
-  color: white;
+  color: wheat;
   height: auto;
   padding: 10px;
 }
