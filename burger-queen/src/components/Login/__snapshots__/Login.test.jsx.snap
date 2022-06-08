@@ -11,7 +11,7 @@ exports[`Test component Login render component Login 1`] = `
       <img
         alt="logo-icon"
         class="logo-icon"
-        src="Logo_Image.gif"
+        src="Logo_Image.png"
       />
       <h1
         class="title-h1"
@@ -56,13 +56,12 @@ exports[`Test component Login render component Login 1`] = `
       </div>
       <button
         class="btn-form"
-        data-testid="btn-login"
         type="button"
       >
          Login
       </button>
       <div
-        class="title-h1"
+        class="title-error"
       />
     </form>
   </div>

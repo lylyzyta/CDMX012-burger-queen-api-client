@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { helpHttp } from '../../../../helpers/helpHttp'
 import CrudDeliver from './CrudDeliver'
-import editIcon from '../../../../img/OrderStatus/editOrder.svg'
-import deleteIcon from '../../../../img/OrderStatus/deleteOrder.svg'
-import sendIcon from '../../../../img/OrderStatus/deliveredIcon.svg'
+import editIcon from '../../../../img/OrderStatus/editOrders.svg'
+import deleteIcon from '../../../../img/OrderStatus/deleteOrders.svg'
+import sendIcon from '../../../../img/OrderStatus/deliveredIcons.svg'
 import style from './CrudTableRow.module.css'
 import PropTypes from 'prop-types'
 
@@ -83,7 +83,7 @@ const CrudTableRow = ({ el, deleteData, setEditOrder }) => {
       <td className={style.rowOrderDashboard}>{dateProcessed}</td>
       <td className={style.rowOrderDashboard}>
         {status !== 'Deliver'
-          ? <div>
+          ? <div className={style.containerbtnStatus}>
             <button className={style.btnStatus} onClick={() => setEditOrder(el)}>
               <img className={style.icon} src={editIcon} alt='edit-icon' />
             </button>

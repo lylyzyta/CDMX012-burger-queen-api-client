@@ -70,8 +70,8 @@ const CrudForm = ({ createData, updateData, editOrder, setEditOrder }) => {
   return (
     <div className={style.containerFormStatus}>
       <h3 className={style.titleTable}>{editOrder ? 'Edit Order' : 'Edit Order'}</h3>
-      <form className={style.form}onSubmit={handleSubmit}>
       <h3 className={style.titleForm}>Order Form</h3>
+      <form className={style.form}onSubmit={handleSubmit}>
       <section className={style.boxForm}>
       <label className={style.labelForm}> Order Id:  </label>
       <input className={style.inputForm}

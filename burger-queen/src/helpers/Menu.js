@@ -20,8 +20,14 @@ export default function Menu (prop) {
 
   function deleteItem (product) {
     let deleteArray = []
+    let updateTotal = []
+    let updateProductsToSend = []
     deleteArray = listOrder.filter(function (plate) { return plate !== product })
     setListOrder(deleteArray)
+    updateTotal = total.filter(function (each) { return each.id !== product.id })
+    setTotal(updateTotal)
+    updateProductsToSend = productstoSend.filter(function (each) { return each.product !== product.item })
+    setproductstoSend(updateProductsToSend)
   }
 
   function pickingOrder (product) {

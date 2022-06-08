@@ -55,7 +55,6 @@ export default function WaiterPage () {
       <section className='container-order'>
       <CrudApi />
       </section>
-      <section></section>
     </div>
   )
 }

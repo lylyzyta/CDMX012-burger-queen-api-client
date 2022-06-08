@@ -1,6 +1,6 @@
 .containerFormStatus{
   width: 100%;
-  height: 100%;
+  height: 40%;
   border: 0.5px solid #d58941;
   overflow: scroll;
   scroll-behavior: smooth;
@@ -9,6 +9,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  background-color: transparent;
 }
 .inputForm {
     border: thin solid #9f2525;
@@ -16,8 +17,8 @@
     padding: 0.75rem;
     margin-bottom: 1rem;
     outline: none;
-    width: 100%;
-    font-size: 1rem;
+    width: 80%;
+    font-size: .8rem;
     background-color: #F6E7D8;
     height: auto;
     color: #9f2525;
@@ -33,25 +34,26 @@
 
   }
   .btnForm {
-    width: fit-content;
-    background-color: #9f2525;
-    border: 2px solid white;
+    width: 20%;
+    height: fit-content;
+    background: rgba(136, 10, 10, 0.418);
+    border: 0.5px solid #d58941;
     border-radius: 20px;
     padding: 0.5rem 1rem;
     margin: 0 0.5rem 0 0;
-    display: inline-block;
-    color: white;
+    color: wheat;
     font-weight: bolder;
-    font-size: 1.2rem;
+    font-size: .8rem;
   }
   .form {
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.85);
+    width: 93%;
+    background: #d58841bd;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     height: auto;
+    margin: auto auto;
   }
   .titleTable {
       font-size: 1.5em;
@@ -61,25 +63,28 @@
       text-align: center;
   }
 .titleForm{
-  background: rgb(149, 3, 3);
+  background: rgba(136, 10, 10, 0.418);
   color: wheat;
   height: auto;
   padding: 10px;
+  width: 90%;
+  margin: auto auto;
 }
 .labelForm{
-color: #9f2525;
-font-weight: bolder;
-text-align: start;
-width: 100%;
-margin: 10px;
+  color: white;
+  font-weight: bolder;
+  text-align: start;
+  width: 80%;
+  margin: 10px;
+  font-size: .8rem;
 }
 .boxForm{
 margin-top: 20px;
-border-radius: 10px;
-width: fit-content;
+border-radius: 21px;
+width: 100%;
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
-align-items: flex-start;
+align-items: center;
 height: auto;
 }
