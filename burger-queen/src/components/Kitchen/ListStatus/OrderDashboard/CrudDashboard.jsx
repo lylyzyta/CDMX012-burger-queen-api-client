@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 const CrudDashboard = ({ data, setDataToEdit }) => {
   CrudDashboard.propTypes = {
-    data: PropTypes.array,
+    data: PropTypes.object,
     setDataToEdit: PropTypes.func.isRequired
   }
   return (

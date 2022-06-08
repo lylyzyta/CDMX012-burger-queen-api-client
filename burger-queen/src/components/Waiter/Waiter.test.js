@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 import { render, screen } from '@testing-library/react'
-import Waiter from './Waiter'
+import WaiterPage from './Waiter'
+import React from 'react'
 
 test('render buttons', () => {
-    render(<Waiter />)
-    const buttonBreakfast = screen.getAllByText('Breakfast')
-    expect(buttonBreakfast).getByText()
+  render(<WaiterPage />)
+  const buttons = screen.getByText('Breakfast', 'Burger', 'Dessert', 'Beverage')
 })

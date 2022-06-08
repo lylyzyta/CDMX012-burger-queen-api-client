@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 const CrudTable = ({ data, setEditOrder, deleteData }) => {
   CrudTable.propTypes = {
-    data: PropTypes.object,
+    data: PropTypes.array,
     setEditOrder: PropTypes.func.isRequired,
     deleteData: PropTypes.func.isRequired
   }

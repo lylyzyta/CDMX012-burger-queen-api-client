@@ -5,8 +5,8 @@ import PropTypes from 'prop-types'
 
 const CrudForm = ({ updateData, dataToEdit }) => {
   CrudForm.propTypes = {
-    updateData: PropTypes.array,
-    dataToEdit: PropTypes.array
+    updateData: PropTypes.object,
+    dataToEdit: PropTypes.object
   }
   const [form, setForm] = useState({
     status: '',

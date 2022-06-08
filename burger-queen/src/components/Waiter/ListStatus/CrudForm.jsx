@@ -21,49 +21,49 @@ const CrudForm = ({ createData, updateData, editOrder, setEditOrder }) => {
   CrudForm.propTypes = {
     createData: PropTypes.func.isRequired,
     updateData: PropTypes.func.isRequired,
-    editOrder: PropTypes.array,
+    editOrder: PropTypes.object,
     setEditOrder: PropTypes.func.isRequired
   }
-  const [form, setForm] = useState(initailForm)
+  const [formNewOrder, setFormNewOrder] = useState(initailForm)
   useEffect(() => {
     if (editOrder) {
-      setForm(editOrder)
+      setFormNewOrder(editOrder)
     } else {
-      setForm(initailForm)
+      setFormNewOrder(initailForm)
     }
   }, [editOrder])
 
   const handleChange = (e) => {
     console.log(e.target.name)
-    setForm({
-      ...form,
+    setFormNewOrder({
+      ...formNewOrder,
       [e.target.name]: e.target.value,
       products: [
         { [e.target.name]: e.target.value }
       ]
     })
-    console.log(form)
+    console.log(formNewOrder)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    if (!form.userId || !form.client || !form.status || !form.dateEntry || !form.dateProcessed) {
+    if (!formNewOrder.userId || !formNewOrder.client || !formNewOrder.status || !formNewOrder.dateEntry || !formNewOrder.dateProcessed) {
       alert('Datos incompletos')
       return
     }
 
-    if (form.id === null) {
-      createData(form)
+    if (formNewOrder.id === null) {
+      createData(formNewOrder)
     } else {
-      updateData(form)
+      updateData(formNewOrder)
     }
 
     handleReset()
   }
 
   const handleReset = (e) => {
-    setForm(initailForm)
+    setFormNewOrder(initailForm)
     setEditOrder(null)
   }
 
@@ -71,7 +71,8 @@ const CrudForm = ({ createData, updateData, editOrder, setEditOrder }) => {
     <div className={style.containerFormStatus}>
       <h3 className={style.titleTable}>{editOrder ? 'Edit Order' : 'Edit Order'}</h3>
       <h3 className={style.titleForm}>Order Form</h3>
-      <form className={style.form}onSubmit={handleSubmit}>
+      <div key={formNewOrder.id}>
+      <form className={style.form} onSubmit={handleSubmit}>
       <section className={style.boxForm}>
       <label className={style.labelForm}> Order Id:  </label>
       <input className={style.inputForm}
@@ -79,7 +80,7 @@ const CrudForm = ({ createData, updateData, editOrder, setEditOrder }) => {
           name='id'
           placeholder='Order id'
           onChange={handleChange}
-          value={form.id}
+          defaultValue={formNewOrder.id}
         />
 
       <label className={style.labelForm}> User Id: </label>
@@ -88,7 +89,7 @@ const CrudForm = ({ createData, updateData, editOrder, setEditOrder }) => {
           name='userId'
           placeholder='User Id'
           onChange={handleChange}
-          value={form.userId}
+          defaultValue={formNewOrder.userId}
         />
 
         <label className={style.labelForm}> Client:</label>
@@ -97,7 +98,7 @@ const CrudForm = ({ createData, updateData, editOrder, setEditOrder }) => {
           name='client'
           placeholder='Client'
           onChange={handleChange}
-          value={form.client}
+          defaultValue={formNewOrder.client}
         />
 
       <label className={style.labelForm}> Status:</label>
@@ -106,7 +107,7 @@ const CrudForm = ({ createData, updateData, editOrder, setEditOrder }) => {
           name='status'
           placeholder='Status'
           onChange={handleChange}
-          value={form.status}
+          defaultValue={formNewOrder.status}
         />
 
         <label className={style.labelForm}> Date Entry:
@@ -116,7 +117,7 @@ const CrudForm = ({ createData, updateData, editOrder, setEditOrder }) => {
           name='dateEntry'
           placeholder='Date Entry'
           onChange={handleChange}
-          value={form.dateEntry}
+          defaultValue={formNewOrder.dateEntry}
         />
         <label className={style.labelForm}> Date Processed:</label>
         <input className={style.inputForm}
@@ -124,10 +125,10 @@ const CrudForm = ({ createData, updateData, editOrder, setEditOrder }) => {
           name='dateProcessed'
           placeholder='Date Processed'
           onChange={handleChange}
-          value={form.dateProcessed}
+          defaultValue={formNewOrder.dateProcessed}
         />
 
-        {form.products && form.products.map((product) =>
+        {formNewOrder.products && formNewOrder.products.map((product) =>
           <div key={product.id}>
           <label className={style.labelForm}> Quantity: </label>
           <input className={style.inputForm}
@@ -135,7 +136,7 @@ const CrudForm = ({ createData, updateData, editOrder, setEditOrder }) => {
                 name={product.qty}
                 placeholder='Quantity'
                 onChange={handleChange}
-                value={product.quantity} />
+                defaultValue={product.qty} />
 
           <label className={style.labelForm}> Product:
           </label>
@@ -144,17 +145,18 @@ const CrudForm = ({ createData, updateData, editOrder, setEditOrder }) => {
               name='product'
               placeholder='Product'
               onChange={handleChange}
-              value={product.product} />
+              defaultValue={product.product} />
 
           </div>
         )}
-        <section className={style.btnAccions}>
+          <section className={style.btnAccions}>
           <input className={style.btnForm} type='submit' value='Send Order' />
           <input className={style.btnForm} type='reset' value='Clean Form' onClick={handleReset} />
         </section>
         </section>
       </form>
-    </div>
+      </div>
+     </div>
   )
 }
 

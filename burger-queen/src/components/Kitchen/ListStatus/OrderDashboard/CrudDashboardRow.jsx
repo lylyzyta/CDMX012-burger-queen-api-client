@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 
 const CrudDashboardRow = ({ el }) => {
   CrudDashboardRow.propTypes = {
-    el: PropTypes.array
+    el: PropTypes.object
   }
   const [startCounter, setStartCounter] = useState(false)
 
