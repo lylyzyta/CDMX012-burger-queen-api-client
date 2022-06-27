@@ -2,9 +2,9 @@
 .containerOrderHistoryKitchen{
     width: 90%;
     height: 80%;
-    border: 10px solid #DCAA7B;
-    background-color: #2b070776;
-    border-radius: 20px;
+    border: 3.5px solid #d58841ce;
+    background-color: #2b070765;
+    border-radius: 21px;
     float: left;
     overflow: scroll;
     scroll-behavior: smooth;
@@ -13,7 +13,7 @@
     font-size: 2em;
     height: auto;
     margin: 10px 5px;
-    color: white;
+    color: wheat;
     text-align: center;
 }
 .table {
@@ -26,8 +26,8 @@
     border-bottom: thin solid rgb(149, 3, 3);
     height: auto;
     width: fit-content;
-    color: white;
-    background: rgb(149, 3, 3);
+    color: wheat;
+    background: rgba(149, 3, 3, 0.671);
 }
 
 

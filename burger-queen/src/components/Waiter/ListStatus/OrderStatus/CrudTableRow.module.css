@@ -1,11 +1,12 @@
 .rowOrderDashboard {
     text-align:center;
     padding: 0.5rem;
-    border-bottom: thin solid white;
+    border-bottom: thin solid transparent;
     height: auto;
     width: fit-content;
-    background-color: rgba(255, 255, 255, 0.85);
+    background: #d58841bd;
     font-size: 80%;
+    color: #F6E7D8;
 }
 .pendingStatus{
     color: #956B0B;
@@ -14,9 +15,9 @@
     border-radius: 10px;
     width: fit-content;
     height: auto;
-    padding: 10px;
+    padding: 5px 10px;
     text-align: center;
-    font-size: 18px;
+    font-size: 13px;
     margin: auto;
 }
 .readyStatus{
@@ -25,9 +26,9 @@
     border: 0.5px solid rgb(44, 45, 125);
     border-radius: 10px;
     width: fit-content;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
-    font-size: 18px;
+    font-size: 13px;
     margin: auto;
     height: auto;
 }
@@ -37,19 +38,24 @@
     border: 0.5px solid rgb(43, 90, 13);
     border-radius: 10px;
     width: fit-content;
-    padding: 10px;
+    padding: 5px 10px;
     text-align: center;
-    font-size: 18px;
+    font-size: 13px;
     margin: auto;
     height: auto;
 }
 .btnStatus{
-    width: fit-content;
+    width: 30%;
     border: none;
     background: none;
 }
 .icon{
-    width: 50%;
-    height: 50px;
+    width: 45%;
+    height: 45px;
+}
+.containerbtnStatus{
+    display: flex;
+
+    flex-wrap: wrap;
 }
 

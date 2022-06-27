@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test component Login render component Login 1`] = `
+<DocumentFragment>
+  <div
+    class="containerKitchen"
+  >
+    <div
+      class="headerKitchen"
+    >
+      <img
+        alt="logo-icon"
+        class="logoAdmin"
+        src="Logo_Image.png"
+      />
+      <button
+        class="btnLogout"
+      >
+        LogOut
+      </button>
+    </div>
+    <article
+      class="boxGeneralKitchen"
+    >
+      <div
+        class="lds-ring"
+      >
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
+    </article>
+  </div>
+</DocumentFragment>
+`;

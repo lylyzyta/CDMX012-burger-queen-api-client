@@ -1,8 +1,9 @@
 .btnSendWaiter{
-    background: rgb(44, 125, 71);
-    color: white;
-    width: 80%;
-    border: 2px solid white;
-    font-size: 15px;
+    background: rgba(136, 10, 10, 0.418);
+    color: wheat;
+    width: 100%;
+    padding: 5px;
+    border: 0.5px solid #d58941;
+    font-size: 12px;
     border-radius: 15px;
 }

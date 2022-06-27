@@ -1,27 +1,37 @@
-import { useEffect, useState } from "react"
-import "./NewOrder.css";
+import React, { useEffect, useState } from 'react'
+import './NewOrder.css'
+import PropTypes from 'prop-types'
 
-const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend, setTotal, total, setListOrder }) => {
+const NewOrder = ({ listOrder, deleteItem, productstoSend, setproductstoSend, setTotal, total, setListOrder }) => {
+  NewOrder.propTypes = {
+    listOrder: PropTypes.array,
+    deleteItem: PropTypes.func.isRequired,
+    productstoSend: PropTypes.array,
+    setproductstoSend: PropTypes.func.isRequired,
+    setTotal: PropTypes.func.isRequired,
+    total: PropTypes.array,
+    setListOrder: PropTypes.func.isRequired
+  }
   const [table, setTable] = useState(1)
-  //Fecha
-  const timeAndDate = Date.now();
-  const today = new Date(timeAndDate);
+  // Fecha
+  const timeAndDate = Date.now()
+  const today = new Date(timeAndDate)
   const month = today.getMonth() + 1
-  const day = today.getDate();
-  const year = today.getFullYear();
-  const hours = today.getHours();
-  const minutes = today.getMinutes();
-  const shortDate = day + "/" + month + "/" + year;
-  const time = hours + ":" + minutes
-  //agrega cantidad a los productos
+  const day = today.getDate()
+  const year = today.getFullYear()
+  const hours = today.getHours()
+  const minutes = today.getMinutes()
+  const shortDate = day + '/' + month + '/' + year
+  const time = hours + ':' + minutes
+  // agrega cantidad a los productos
   const sum = (e) => {
     const updateProduct = []
     const updatePrice = []
-    document.getElementById(e.id).textContent = parseInt(document.getElementById(e.id).textContent) + 1;
-    document.getElementById(e.id + "price").textContent = "$ " + document.getElementById(e.id).textContent * e.price;
+    document.getElementById(e.id).textContent = parseInt(document.getElementById(e.id).textContent) + 1
+    document.getElementById(e.id + 'price').textContent = '$ ' + document.getElementById(e.id).textContent * e.price
     const subtotal = { sub: document.getElementById(e.id).textContent * e.price, id: e.id }
     const qtyArray = { qty: parseInt(document.getElementById(e.id).textContent), product: e.item }
-    for (product of productstoSend) {
+    for (const product of productstoSend) {
       if (product.product === e.item) {
         updateProduct.push(qtyArray)
       } else {
@@ -29,7 +39,7 @@ const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend, setT
       }
     }
     setproductstoSend(updateProduct)
-    for (let sub of total) {
+    for (const sub of total) {
       if (sub.id === e.id) {
         updatePrice.push(subtotal)
       } else {
@@ -38,12 +48,12 @@ const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend, setT
     }
     setTotal(updatePrice)
   }
-  //el $ total de la orden
+  // el $ total de la orden
   const [totalPrices, setTotalPrices] = useState(0)
   useEffect(() => {
     const totalArray = []
-    total.map((each) => {
-      totalArray.push(each.sub);
+    total.forEach(each => {
+      totalArray.push(each.sub)
     })
     setTotalPrices(totalArray.reduce((a, b) => a + b, 0))
   }, [total])
@@ -52,11 +62,11 @@ const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend, setT
   const rest = (e) => {
     const updateProduct = []
     const updatePrice = []
-    document.getElementById(e.id).textContent = parseInt(document.getElementById(e.id).textContent) - 1;
-    document.getElementById(e.id + "price").textContent = "$ " + document.getElementById(e.id).textContent * e.price;
+    document.getElementById(e.id).textContent = parseInt(document.getElementById(e.id).textContent) - 1
+    document.getElementById(e.id + 'price').textContent = '$ ' + document.getElementById(e.id).textContent * e.price
     const subtotal = { sub: document.getElementById(e.id).textContent * e.price, id: e.id }
     const qtyArray = { qty: parseInt(document.getElementById(e.id).textContent), product: e.item }
-    for (product of productstoSend) {
+    for (const product of productstoSend) {
       if (product.product === e.item) {
         updateProduct.push(qtyArray)
       } else {
@@ -64,7 +74,7 @@ const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend, setT
       }
     }
     setproductstoSend(updateProduct)
-    for (let sub of total) {
+    for (const sub of total) {
       if (sub.id === e.id) {
         updatePrice.push(subtotal)
       } else {
@@ -73,74 +83,72 @@ const NewOrder = ({ product, deleteItem, productstoSend, setproductstoSend, setT
     }
     setTotal(updatePrice)
   }
-  function changeTable(e) {
+  function changeTable (e) {
     setTable(e.target.value)
   }
 
-  //órden a mandar
+  // órden a mandar
 
   const initialForm = {
-    id: table + " at " + time,
-    userId: "waiter",
+    id: table + ' at ' + time,
+    userId: 'waiter',
     client: table,
     products: productstoSend,
-    status: "pending",
+    status: 'pending',
     dateEntry: time,
     timeEntry: time,
-    dateProcessed: time,
-  };
-  //manda la órden a cocina
-  function sendToKitchen() {
+    dateProcessed: shortDate
+  }
+  // manda la órden a cocina
+  function sendToKitchen () {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(initialForm)
-    };
+    }
     fetch('https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/orders', requestOptions)
       .then(response => response.json())
       .then(data => console.log(data))
-    alert("Sent to Kitchen")
+    alert('Sent to Kitchen')
     setListOrder([])
     setproductstoSend([])
     setTotal([])
     setTable(1)
   }
 
-
-
   return (
-    <div className="orderForm" >
-      <p className="plusItems">Table</p>
-      <input type="number" id="table" className="offset" min={1} max={8} defaultValue={1} onChange={changeTable} />
-      {product.map((each) => (
-        <div className="row" key={each.item}>{ }
-          <button type="button" onClick={() => sum(each)} className="sumButton" >+</button>
-          <p className="qty" id={each.id} >1</p>
-          <button type="button" onClick={() => rest(each)} className="sumButton" >-</button>
-          <p className="plusItems" >{each.item}</p>
-          <p className="plusItems" > $ {each.price}</p>
-          <p className="subtotal" id={each.id + "price"} >$ {each.price}</p>
-          <button className="deleteButton" type="button" onClick={() => deleteItem(each)} >Clear</button>
-        </div>
-      ))}
-      <div className="total">
-        <button type="button" className="downButton" onClick={() => sendToKitchen()}>Kitchen</button>
-        <p className="plusItems" >  TOTAL $ {totalPrices}</p>
-        <button type="button" id="cancelOrder" className="downButton" onClick={() => {
-          setListOrder([])
-          setproductstoSend([])
-          setTotal([])
-          setTable(1)
-        }
+    <div className='orderForm' >
+        <div className='total'>
+        <button type='button' className='downButton' onClick={() => sendToKitchen()}>Kitchen</button>
+         <button type='button' id='cancelOrder' className='downButton' onClick={() => {
+           setListOrder([])
+           setproductstoSend([])
+           setTotal([])
+           setTable(1)
+         }
         }>
           Cancel Order
         </button>
       </div>
+      <p className='plusItems'>Table</p>
+      <input type='number' id='table' className='offset' min={1} max={8} defaultValue={1} onChange={changeTable} />
+      <p className='plusItems' >  TOTAL $ {totalPrices}</p>
+      {listOrder.map((each) => (
+        <tr className='row' key={each.item}>{ }
+          <td onClick={() => sum(each)} className='sumButton' >+</td>
+          <td className='qty' id={each.id} >1</td>
+          <td onClick={() => rest(each)} className='sumButton' >-</td>
+          <td className='plusItems' >{each.item}</td>
+          <td className='plusItems' > $ {each.price}</td>
+          <td className='subtotal' id={each.id + 'price'} >$ {each.price}</td>
+          <td className='deleteButton' onClick={() => deleteItem(each)} >Clear</td>
+        </tr>
+      ))}
+
     </div>
   )
 }
 
 export {
-  NewOrder,
-
+  NewOrder
 }

@@ -1,102 +1,98 @@
-import React, { useEffect, useState } from "react";
-import { helpHttp } from "../../../helpers/helpHttp";
-import CrudForm from "./CrudForm";
-import CrudTable from "./OrderStatus/CrudTable";
-import Loader from "./Loader";
-import Message from "./Message";
-import style from '../ListStatus/CrudApi.module.css';
+import React, { useEffect, useState } from 'react'
+import { helpHttp } from '../../../helpers/helpHttp'
+import CrudForm from './CrudForm'
+import CrudTable from './OrderStatus/CrudTable'
+import Loader from './Loader'
+import Message from './Message'
+import style from '../ListStatus/CrudApi.module.css'
 
 const CrudApi = () => {
+  const [db, setDb] = useState(null)
+  const [editOrder, setEditOrder] = useState(null)
+  const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(false)
 
-  const [db, setDb] = useState(null);
-  const [editOrder, setEditOrder] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  let api = helpHttp();
-  let url = "https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/orders";
+  const api = helpHttp()
+  const url = 'https://6290ec0e27f4ba1c65c4cd21.mockapi.io/api/orders'
 
   useEffect(() => {
-    setLoading(true);
+    setLoading(true)
     helpHttp()
       .get(url)
       .then((res) => {
-        //console.log(res);
+        // console.log(res)
         if (!res.err) {
-          setDb(res);
-          setError(null);
+          setDb(res)
+          setError(null)
         } else {
-          setDb(null);
-          setError(res);
+          setDb(null)
+          setError(res)
         }
-        setLoading(false);
-      });
-  }, [url]);
+        setLoading(false)
+      })
+  }, [url])
 
   const createData = (data) => {
+    data.id = Date.now()
+    console.log(data)
 
-    data.id = Date.now();
-    //console.log(data);
-
-    let options = {
+    const options = {
       body: data,
-      headers: { "content-type": "application/json" },
-    };
+      headers: { 'content-type': 'application/json' }
+    }
 
     api.post(url, options).then((res) => {
-      //console.log(res);
+      // console.log(res)
       if (!res.err) {
-        setDb([...db, res]);
+        setDb([...db, res])
       } else {
-        setError(res);
+        setError(res)
       }
-    });
-  };
+    })
+  }
 
   const updateData = (data) => {
-    let endpoint = `${url}/${data.id}`;
-    //console.log(endpoint);
+    const endpoint = `${url}/${data.id}`
+    // console.log(endpoint)
 
-    let options = {
+    const options = {
       body: data,
-      headers: { "content-type": "application/json" },
-    };
+      headers: { 'content-type': 'application/json' }
+    }
 
     api.put(endpoint, options).then((res) => {
-      //console.log(res);
+      // console.log(res)
       if (!res.err) {
-        let newData = db.map((el) => (el.id === data.id ? data : el));
-        setDb(newData);
+        const newData = db.map((el) => (el.id === data.id ? data : el))
+        setDb(newData)
       } else {
-        setError(res);
+        setError(res)
       }
-    });
-  };
+    })
+  }
 
   const deleteData = (id) => {
-    let isDelete = window.confirm(
+    const isDelete = window.confirm(
       `¿Estás seguro de eliminar el registro con el id '${id}'?`
-    );
+    )
 
     if (isDelete) {
-      let endpoint = `${url}/${id}`;
-      let options = {
-        headers: { "content-type": "application/json" },
-      };
+      const endpoint = `${url}/${id}`
+      const options = {
+        headers: { 'content-type': 'application/json' }
+      }
 
       api.del(endpoint, options).then((res) => {
-        //console.log(res);
+        // console.log(res)
         if (!res.err) {
-          let newData = db.filter((el) => el.id !== id);
-          setDb(newData);
+          const newData = db.filter((el) => el.id !== id)
+          setDb(newData)
         } else {
-          setError(res);
+          setError(res)
         }
-      });
-    } else {
-      return;
+      })
     }
-  };
+  }
 
   return (
       <article className={style.boxGeneral}>
@@ -104,7 +100,7 @@ const CrudApi = () => {
         {error && (
           <Message
             msg={`Error ${error.status}: ${error.statusText}`}
-            bgColor="#dc3545"
+            bgColor='#dc3545'
           />
         )}
         {db && (
@@ -121,7 +117,7 @@ const CrudApi = () => {
           setEditOrder={setEditOrder}
         />
       </article>
-  );
-};
+  )
+}
 
-export default CrudApi;
+export default CrudApi

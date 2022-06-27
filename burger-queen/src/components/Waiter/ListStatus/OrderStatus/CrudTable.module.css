@@ -1,43 +1,48 @@
 
 .containerOrderStatus{
     width: 100%;
-    height: 100%;
-    border: 10px solid #d58941;
-    background-color: #2b070776;
-    overflow: scroll;
+    height: 70%;
+    border: 0.8px solid #d58941;
+    background-color: transparent;
+    box-shadow: 0px -1px 2px rgba(255, 255, 255, 0.2), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    overflow-y: scroll;
     scroll-behavior: smooth;
-    border-radius: 20px;
+    border-radius: 21px;
     float: left;
+    margin-bottom: 20px;
 }
 .headerTable{
     display: flex;
     flex-direction: row;
     align-items: center;
     height: auto;
+    margin-top: 10px;
+
 }
 .titleTable {
-    font-size: 2em;
+    font-size: 1.5em;
     height: auto;
-    margin: 10px 5px;
-    color: white;
+    margin: 5px;
+    color: wheat;
     text-align: center;
 }
 .table {
-    width: 100%;
+    width: 98%;
     margin-top: 20px;
+    margin-left: 10px;
 }
 .titleColumns{
     text-align:center;
     padding: 0.5rem;
-    border-bottom: thin solid rgb(149, 3, 3);
+    border: 0.5px solid transparent;
     height: fit-content;
     width: fit-content;
-    color: white;
-    background: rgb(149, 3, 3);
+    color: wheat;
+
 }
 .headTable{
-    background-color: rgb(149, 3, 3);
-    color: white;
+    background: rgba(136, 10, 10, 0.418);
+    color: wheat;
     font-weight: bolder;
     height: auto;
 }
