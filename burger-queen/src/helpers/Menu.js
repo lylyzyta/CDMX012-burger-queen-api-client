@@ -6,6 +6,7 @@ export default function Menu (prop) {
   const [productstoSend, setproductstoSend] = useState([])
   const [products, setProducts] = useState([])
   const [total, setTotal] = useState([])
+  // const [products1, setProducts1] = useState([])
 
   async function getResponse (url) {
     const response = await fetch(url)
