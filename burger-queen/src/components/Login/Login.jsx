@@ -50,6 +50,21 @@ export default function LoginPage () {
         setError('User not found')
       }
     }
+
+    // async function getResponse () {
+  /*   const requestOptions = {
+      method: 'POST',
+      mode: 'cors',
+      headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+      body: JSON.stringify({
+        email: 'jose@gmail.com',
+        password: '123456'
+      })
+    }
+    fetch(
+      'http://localhost:8080/auth', requestOptions)
+      .then((response) => response.json())
+      .then((data) => console.log(data, 'soy DATAAAAA')) */
   }
 
   return (
