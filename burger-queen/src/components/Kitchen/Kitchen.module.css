@@ -6,6 +6,7 @@
     width: 100%;
     height: 100%;
     font-size: 16px;
+  
   }
   .containerKitchen{
     display: flex;
@@ -16,7 +17,14 @@
     background-repeat: no-repeat;
     background-position:center;
     background-size: cover;
-    }
+    position: fixed;
+    overflow-x: scroll;
+   }
+   ::-webkit-scrollbar {
+    display: none;
+}
+
+    
   .headerKitchen{
     width: 100%;
     height: 14%;
@@ -43,12 +51,56 @@
   .boxGeneralKitchen{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    overflow: scroll;
-    scroll-behavior: smooth;
-    align-items: center;
-    height: 85%;
+    position:static;
+    width: 90vw;
+    margin-left: 70px;
+   
   }
-.headH3{
-  color: white;
+  .titlesKitchePanel {
+    text-align: center;
+    color: wheat;
+    font-size: 2.5vmax;
+    height: 10%;
+    margin-top: 20px;
+  }
+
+  .dataKitchePanel{
+   position: relative;
+    
+
+ 
+}
+
+.columnKitchenPanel{
+  color: rgb(80, 55, 8);
+  border: 7px solid #d58841ce;
+  background-color: #FAEB7C;
+  font-size: 1.2vmax;
+  width:2vmax;
+  height: auto;
+}
+.rowKitchenPanel{
+  color: wheat;
+  background-color: #47312583;
+  border: 2px solid #d58841ce;
+  width: auto;
+  height: 3vh;
+  text-align: center;
+ }
+ .rowProductsKitchenPanel{
+  color: wheat;
+  border: 10px solid transparent;
+  width: auto;
+  height: 3vh;
+  text-align: start;
+  }
+
+ .btnOptionPanel {
+  /*background-color: #faeb7ce3;*/
+  background-color: #faeb7ce3;
+  width: 10vw;
+  color: rgb(26, 18, 3);
+  height: 8vh;
+  border-radius: 21px;
+  border: 0.5px solid #d58841ce;
 }
